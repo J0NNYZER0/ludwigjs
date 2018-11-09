@@ -185,6 +185,8 @@ const Handlers = {
 
           await request.server.app.cache.set(sid, _accountStatus.account, 0)
 
+          request.server.app.cache.rules({ expiresIn: 10 * 60 * 1000 })
+
           request.cookieAuth.set({ sid })
 
           console.log('TOKEN SHORTCUT', `${sid}`)
@@ -273,6 +275,8 @@ const Handlers = {
           newAccount.message = 'Please check your email for your one-click login.'
 
           await request.server.app.cache.set(sid, newAccount, 0)
+
+          request.server.app.cache.rules({ expiresIn: 10 * 60 * 1000 })
 
           request.cookieAuth.set({ sid })
 
