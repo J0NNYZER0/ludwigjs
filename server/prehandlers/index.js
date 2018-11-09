@@ -7,7 +7,7 @@ const PreHandlers = {
   GetAccount: async(request, h) => {
 
     try {
-      
+
       let account = {}
 
       if (request.state.hasOwnProperty('sid'))

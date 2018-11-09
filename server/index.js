@@ -89,8 +89,8 @@ const server = Hapi.server({
 
 // Setup cache
 const cache = server.cache({
-  segment: 'account',
-  expiresIn: 3 * 24 * 60 * 60 * 1000
+  segment: 'session',
+  expiresIn: 10 * 60 * 1000
 })
 
 // Assign cache to server

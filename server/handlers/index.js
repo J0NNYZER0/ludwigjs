@@ -60,7 +60,8 @@ const Handlers = {
 
       try {
 
-        const sessionId = request.state.hasOwnProperty('sid')
+        const sessionId = request.state.hasOwnProperty('sid'),
+          token = request.params.sid
 
         if (!sessionId) {
 
@@ -72,7 +73,7 @@ const Handlers = {
 
         else {
 
-          const cache = await request.server.app.cache.get(request.params.sid)
+          const cache = await request.server.app.cache.get(token)
 
           if (!cache) {
 
@@ -116,13 +117,15 @@ const Handlers = {
 
               await request.server.app.cache.set(sid, _accountStatus.account, 0)
 
+              request.server.app.cache.rules({ expiresIn: 1 * 60 * 60 * 1000 })
+
               request.cookieAuth.set({ sid })
 
               console.log('TOKEN SHORTCUT', `${sid}`)
 
-              await request.server.app.cache.drop(request.params.sid)
+              await request.server.app.cache.drop(token)
 
-              request.cookieAuth.clear(request.params.sid)
+              request.cookieAuth.clear(token)
 
               await QueryHandler('../apis/mysql/queries/update/account_login.sql', [1,1,_accountStatus.account.email])
 
@@ -288,6 +291,32 @@ const Handlers = {
       }
 
     },
+  },
+  Dev: {
+    Cache: async (request, h) => {
+
+      console.log('EXECUTE CACHE HANDLER')
+
+      let session = {}
+
+      const token = request.params.token,
+        cache = request.server.app.cache
+
+      try {
+
+        session = await cache.get(token)
+
+      } catch(e) {
+
+        console.log('ERROR:', e)
+
+        Bounce.rethrow(e, 'system')
+
+      }
+
+      return h.response({ status: 200, data: { session, cache } })
+
+    }
   },
   Static: {
     Account: async (request,h) => {
