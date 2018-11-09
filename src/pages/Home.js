@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
+import { Forms } from 'viddy'
 import HeroWithModal from '../components/groups/HeroWithModal'
 import Hero from '../components/hero/Index'
 import GridLayout from '../components/grid-layouts/Layout1'
-import ContactForm from '../forms/Contact'
 
 class Home extends Component {
 
@@ -19,7 +19,7 @@ class Home extends Component {
             click={() => actions.ui.modal(!this.props.ui.modal)}
             title={`Ludwig JS`}
             text={`A badass fullstack JS boilerplate for rockstar engineers.`}>
-            <ContactForm {...this.props}
+            <Forms.Contact {...this.props}
               callback={() => actions.ui.modal(false)}
               contactType={2}
               formTitle={`Join The Waitlist`}
@@ -84,7 +84,7 @@ class Home extends Component {
           </p>
         </section>
         <section className='bolt-btm'>
-          <ContactForm {...this.props} formTitle={`Request a Demo`}
+          <Forms.Contact {...this.props} formTitle={`Request a Demo`}
             subject='Demo Request' contactType={1} />
         </section>
       </div>

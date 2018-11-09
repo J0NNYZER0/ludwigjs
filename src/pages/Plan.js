@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
+import { Forms } from 'viddy'
 import MainTitle from '../components/MainTitle'
 import DangerousHtml from '../components/DangerousHtml'
 import Slideshow from '../components/Slideshow'
 import Hero from '../components/hero/Index'
 import GridLayout from '../components/grid-layouts/Layout1'
-import ContactForm from '../forms/Contact'
 
 class Plan extends Component {
 
@@ -101,7 +101,7 @@ class Plan extends Component {
           <GridLayout {...this.props} />
         </section>
         <section>
-          <ContactForm {...this.props} formTitle={`Request a Demo`} subject='Demo Request' contactType={1} />
+          <Forms.Contact {...this.props} formTitle={`Request a Demo`} subject='Demo Request' contactType={1} />
         </section>
       </div>
     )

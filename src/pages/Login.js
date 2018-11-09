@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import { Forms } from 'viddy'
 import { Constants as constants } from '../constants/index'
 import MainTitle from '../components/MainTitle'
-import LoginForm from '../forms/Login'
 import StatusMessage from '../components/StatusMessage'
 
 class Login extends Component {
@@ -74,7 +74,7 @@ class Login extends Component {
             <MainTitle titleText={`Login`} />
           </section>
           <section>
-            <LoginForm {...this.props} />
+            <Forms.Login {...this.props} />
           </section>
         </div>
       )

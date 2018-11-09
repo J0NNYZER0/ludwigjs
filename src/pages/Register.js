@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import { Forms } from 'viddy'
 import { Constants as constants } from '../constants/index'
 import MainTitle from '../components/MainTitle'
-import RegisterForm from '../forms/Register'
 import StatusMessage from '../components/StatusMessage'
 
 class Register extends Component {
@@ -55,7 +55,7 @@ class Register extends Component {
             <MainTitle titleText={`Register`} />
           </section>
           <section>
-            <RegisterForm {...this.props} />
+            <Forms.Register {...this.props} />
           </section>
         </div>
       )

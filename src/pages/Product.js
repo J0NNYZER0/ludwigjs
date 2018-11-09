@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
+import { Forms } from 'viddy'
 import MainTitle from '../components/MainTitle'
 import Slideshow from '../components/Slideshow'
 import Preso1 from '../components/presos/Preso-1'
 import Hero from '../components/hero/Index'
 import GridLayout from '../components/grid-layouts/Layout1'
-import ContactForm from '../forms/Contact'
 
 class Plan extends Component {
 
@@ -442,7 +442,7 @@ class Plan extends Component {
           </p>
         </section>
         <section className='bolt-btm'>
-          <ContactForm {...this.props} formTitle={`Request a Demo`} subject='Demo Request' contactType={1} />
+          <Forms.Contact {...this.props} formTitle={`Request a Demo`} subject='Demo Request' contactType={1} />
         </section>
       </div>
     )

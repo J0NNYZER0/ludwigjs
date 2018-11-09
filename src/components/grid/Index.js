@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-import GridBody from './GridBody'
-//import GridFooter from './GridFooter'
-import Button from '../Button'
 
 class Grid extends Component {
 

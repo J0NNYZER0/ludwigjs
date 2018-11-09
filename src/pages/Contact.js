@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
+import { Forms } from 'viddy'
 import MainTitle from '../components/MainTitle'
 import Slideshow from '../components/Slideshow'
 import Hero from '../components/hero/Index'
-import ContactForm from '../forms/Contact'
 
 class Widgets extends Component {
 
@@ -36,7 +36,7 @@ class Widgets extends Component {
           </Slideshow>
         </section>
         <section>
-          <ContactForm {...this.props} formTitle={``} subject='General Request' contactType={0} />
+          <Forms.Contact {...this.props} formTitle={``} subject='General Request' contactType={0} />
         </section>
       </div>
     )
