@@ -1,0 +1,60 @@
+.grids {
+  display: flex;
+  align-items: top;
+	flex-wrap: wrap;
+}
+
+.grid {
+  width: calc(50% - 2em - 20px);
+  margin: 10px;
+  padding: 1em;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  border: 1px solid $greyish-white;
+  border-radius: 6px;
+  color: $black;
+}
+
+.grid.lyt-100 {
+  width: calc(100% - 20px);
+}
+
+.grid-header {
+  font-family: $font-title;
+}
+
+.grid.lyt-100 > .grid-body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.grid-header,
+.grid-footer {
+  padding: $pad-mrg-md;
+  text-align: center;
+}
+
+@media only screen  and (max-width : 768px)  {
+  .grids {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .grid {
+    width: calc(100% - 20px);
+  }
+
+  .grid.lyt-100 .grid-body {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .grid-body > ul {
+    width: 100%;
+    text-align: center;
+  }
+
+}

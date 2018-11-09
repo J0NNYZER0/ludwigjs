@@ -1,0 +1,574 @@
+
+
+/*
+============================================================
+HEADER AND FOOTER
+============================================================
+*/
+
+header,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: $pad-mrg-md-lg;
+  line-height: .85em;
+  background-color: $lime;
+  user-select: none;
+}
+
+header {
+  border-bottom: 1px solid $black;
+}
+
+header > div.h-left > div:last-child {
+  display: none;
+}
+
+header > div.h-left {
+  width: auto;
+}
+
+header > div.h-right {
+  flex: 1;
+  text-align: right;
+}
+
+header nav > ul li {
+  padding: $pad-mrg-md;
+}
+
+header nav > ul li:last-child {
+  padding-right: 0;
+}
+
+nav > ul {
+  display: inline-block;
+  width: auto;
+}
+
+nav > ul li {
+  float: left;
+  list-style-type: none;
+}
+
+main {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0;
+  flex: 1;
+  line-height: 1.65;
+}
+
+footer {
+  border-top: 1px solid $black;
+}
+
+footer > nav {
+  flex: 1;
+}
+
+footer nav ul li {
+  padding-right: $pad-mrg-sm;
+  padding-left: $pad-mrg-sm;
+}
+
+
+footer nav ul li:first-child {
+  padding-left: 0;
+}
+
+footer .copyright,
+footer .company-name {
+  font-family: $font-book;
+  font-size: $fs-xs;
+  padding-right: $pad-mrg-sm;
+}
+
+/*
+============================================================
+BUTTONS
+============================================================
+*/
+
+
+/*
+============================================================
+LISTS
+============================================================
+*/
+
+ul.category {
+  width: 200px;
+  font-family: $font-bold;
+  list-style: none;
+}
+
+ul.category-items {
+ font-family: $font-med;
+ list-style: none;
+}
+
+ul.category-items > li {
+  display: inline;
+}
+
+ul.category-items > li:after {
+  content: ", ";
+}
+
+ul.category-items > li:last-child:after {
+  content: "";
+}
+
+/*
+============================================================
+MODAL AND NOTIFICATION
+============================================================
+*/
+
+.modal,
+.notifications {
+  display: none;
+}
+
+.modal.show,
+.notifications.show {
+  display: flex;
+  position: fixed;
+  width: calc(100% - 30px);
+  padding: $pad-mrg-md;
+  flex-direction: column;
+  background-color: $blue;
+  border: 1px solid $med-grey;
+  margin: $pad-mrg-md;
+}
+
+.modal.show {
+  z-index: 2;
+  background-color: $white;
+  min-height: calc(100vh - 30px);
+  top: $pad-mrg-no;
+  left: $pad-mrg-no;
+}
+
+.notifications.show  {
+  z-index: 2;
+}
+
+div.notifications > div {
+  flex: 1;
+}
+
+.modal.show p,
+.notifications.show p {
+  font-family: $font-med;
+  color: $black;
+}
+
+.m-body {
+  flex: 1;
+}
+
+/*
+============================================================
+SLIDESHOW
+============================================================
+*/
+
+.slideshow {
+  position: relative;
+  z-index: 0;
+}
+
+.slideshow > .hero {
+  //display: none;
+}
+
+.ss-btn {
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+  top: calc(50% - 20px);
+  padding: 20px 10px;
+  //transform: translate(0%,-50%);
+  vertical-align: middle;
+  text-decoration: none;
+  white-space: nowrap;
+  text-align: center;
+  //background-color: $black;
+  border: none;
+  cursor: pointer;
+}
+
+.ss-btn.lft {
+  left: 0%;
+  margin-left: 10px;
+}
+
+.ss-btn.rt {
+  right: 0%;
+  margin-right: 10px;
+}
+
+/*
+============================================================
+SLIDESHOW PROGRESS BAR
+============================================================
+*/
+
+ul.progress-bar {
+  max-width: none;
+  margin: 0 20px;
+  display: flex;
+  position: relative;
+  top: -34px;
+  flex-direction: row;
+}
+
+ul.progress-bar > li:first-child {
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+ul.progress-bar > li:last-child {
+  border-right: none;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+ul.progress-bar > li {
+  flex: 1;
+  height: 12px;
+  background-color: $lime;
+  opacity: .5;
+  list-style-type: none;
+  margin-right: 3px;
+}
+
+ul.progress-bar > li.complete {
+  opacity: 1;
+}
+
+/*
+============================================================
+PRESENTATION
+============================================================
+*/
+
+.preso {
+  padding: 20px;
+  min-height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.preso > div {
+  max-width: 450px;
+  margin-bottom: 25px;
+}
+
+/*
+============================================================
+CODE
+============================================================
+*/
+
+.code {
+  padding: 15px;
+  border-radius: 6px;
+  text-align: left;
+  color: #FFF;
+  font: .85rem 'inconsolata',menlo,consolas,monospace;
+  background-color: #3c3b30;
+}
+
+/*
+============================================================
+HERO BANNER
+============================================================
+*/
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: $pad-mrg-lg;
+  border-radius: $rad-md;
+}
+
+.hero-text > p > button.btn.xl {
+  margin: 25px auto auto;
+}
+
+.banner {
+  height: 300px;
+  width: 100%;
+}
+
+.banner.lg {
+  height: 390px;
+}
+
+.hero.sm {
+  padding: $pad-mrg-md;
+
+  .banner {
+    height: 185px;
+  }
+
+  .elf {
+    background-size: 95px;
+  }
+
+}
+
+.hero > div {
+  position: relative;
+  z-index: 1;
+}
+
+.h-top {
+  width: 310px;
+}
+
+.h-btm {
+  flex: 1;
+  padding: 15px;
+}
+
+.hero-text {
+  color: $black;
+}
+
+.hero-text h1 {
+  font-family: $font-hero-title;
+  margin-bottom: $pad-mrg-no;
+}
+
+/*
+============================================================
+DROPDOWN MENU
+============================================================
+*/
+
+nav > ul > li.dd {
+  margin-right: 20px;
+  padding: 15px;
+}
+
+.ddm-btn {
+  cursor: pointer;
+  position: relative;
+}
+
+.ddm-btn.plus::after {
+  content: '';
+  border-left: $brd-sz-xl solid transparent;
+  border-right: $brd-sz-xl solid transparent;
+  border-top: $brd-sz-xl solid $black;
+  position: absolute;
+  top: 40%;
+  right: -20px;
+}
+
+.ddm-btn.minus::after {
+  content: '';
+  border-left: $brd-sz-xl solid transparent;
+  border-right: $brd-sz-xl solid transparent;
+  border-bottom: $brd-sz-xl solid $black;
+  position: absolute;
+  top: 40%;
+  right: -20px;
+}
+
+.ddm-btn:hover {
+  text-decoration: underline;
+}
+
+ul.ddm {
+  width: 210px;
+  display: none;
+  position: absolute;
+  z-index: 2;
+  margin-left: -100px;
+  margin-top: 52px;
+  padding: 0;
+  list-style-type: none;
+  background-color: $lime;
+  border: $brd-sz solid $black;
+  border-top: $brd-sz solid $lime;
+}
+
+ul.ddm.show {
+  display: inline-block;
+}
+
+ul.ddm > li {
+  width: 100%;
+  text-align: left;
+}
+
+ul.ddm > li {
+  border-bottom: $brd-sz solid $black;
+}
+
+ul.ddm > li:last-child {
+  border: none;
+}
+
+ul.ddm > li > a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+// Hide Dropdown Menu In Footer
+
+footer > nav > ul > li:nth-child(2) {
+  display: none;
+}
+
+/*
+============================================================
+MEDIA QUERY - 768px
+============================================================
+*/
+
+@media only screen  and (max-width : 768px)  {
+
+  /*
+  ============================================================
+  HEADER
+  ============================================================
+  */
+
+  header {
+    height: auto;
+    flex-direction: column;
+    padding-bottom: $pad-mrg-no;
+  }
+
+  header > div.h-left {
+    display: flex;
+    width: 100%;
+    padding-bottom: $pad-mrg-md-lg;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header > div.h-right {
+    display: none;
+    width: 100%;
+    border-top: 1px solid $black;
+  }
+
+  header > div.h-right.show {
+    display: block;
+  }
+
+  header > div.h-left > div {
+    flex: 1;
+  }
+
+  header > div.h-left > div:first-child {
+    text-align: left;
+  }
+
+  header > div.h-left > div:last-child {
+    display: block;
+    text-align: right;
+  }
+
+  header nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  header nav > ul {
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+
+  header nav > ul li {
+    float: none;
+  }
+
+  header nav > ul li:last-child {
+    padding-right: $pad-mrg-md;
+  }
+
+  nav > ul > li.dd {
+    padding: 0;
+  }
+
+  /*
+  ============================================================
+  DROPDOWN MENU
+  ============================================================
+  */
+
+  nav > ul > li.dd {
+    margin-right: 0px;;
+  }
+
+  .ddm-btn {
+    margin-right: 20px;;
+    display: inline-block;
+    padding: 15px;
+  }
+
+  .ddm-btn.plus::after,
+  .ddm-btn.minus::after {
+    right: -5px;
+  }
+
+  ul.ddm.show {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-top: auto;
+    padding: inherit;
+    padding-bottom: 0;
+    border: none;
+  }
+
+  ul.ddm > li:first-child {
+    padding-bottom: 0;
+  }
+
+  ul.ddm > li:last-child {
+    padding-top: 0;
+  }
+
+  ul.ddm > li {
+    border: none;
+    text-align: center;
+  }
+
+  /*
+  ===========================================================+
+  HERO BANNER
+  ============================================================
+  */
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .h-top,
+  .h-btm {
+    width: 100%;
+    flex: 1;
+  }
+
+}

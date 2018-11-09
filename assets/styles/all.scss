@@ -1,0 +1,34 @@
+/**
+* Theme: Paper
+* Author: Rohit kumar
+* Description: A simple blog theme
+* version: .5
+* Happy blogging
+**/
+
+// Imports reset css
+@import 'reset';
+
+// Imports variables
+@import 'variables';
+
+// import the base css
+@import 'base';
+
+//* import the grid css*
+@import 'grid';
+
+//* import fonts
+@import 'fonts';
+
+//* import the buttons css*
+@import 'elements';
+
+// Import icons css
+@import "icons";
+
+// Import background css
+@import "backgrounds";
+
+// Import react components
+@import "components";

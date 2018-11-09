@@ -1,0 +1,234 @@
+{
+  "status": 200,
+  "data": [
+    {
+      "id": 0,
+      "level": 0,
+      "name": "Rock Star",
+      "hero": {
+        "imageClass": "rock-star",
+        "text": "Slay your code like a rock god"
+      },
+      "description": "<b>You’re a 10x’er who can slay code and has a load of groupies.<\/b> This magical elixir is essential in your meteoric transformation into the mega rock god (or goddess) you know you are.",
+      "availability": -1,
+      "price": 39.99,
+      "plan": 0,
+      "features": [
+        {
+          "name": "Responsive Design",
+          "items": [
+            {
+              "name": "Sass"
+            },
+            {
+              "name": "1 Template (768px)"
+            }
+          ]
+        },
+        {
+          "name": "Front End",
+          "items": [
+            {
+              "name": "Reactjs"
+            },
+            {
+              "name": "Redux"
+            }
+          ]
+        },
+        {
+          "name": "Isomorphic Javascript",
+          "items": [
+            {
+              "name": "SEO Compliance"
+            }
+          ]
+        },
+        {
+          "name": "Back End",
+          "items": [
+            {
+              "name": "Nodejs"
+            },
+            {
+              "name": "Hapijs"
+            }
+          ]
+        },
+        {
+          "name": "Storage",
+          "items": [
+            {
+              "name": "Mysql"
+            },
+            {
+              "name": "Redis"
+            }
+          ]
+        },
+        {
+          "name": "Account Mgmt",
+          "items": [
+            {
+              "name": "Cookies"
+            },
+            {
+              "name": "Passwordless Login"
+            }
+          ]
+        },
+        {
+          "name": "Platform Security",
+          "items": [
+            {
+              "name": "Client / Server Validation"
+            }
+          ]
+        },
+        {
+          "name": "Monitoring",
+          "items": [
+            {
+              "name": "Errors, Events, Http"
+            }
+          ]
+        },
+        {
+          "name": "Configurations",
+          "items": [
+            {
+              "name": "Webpack"
+            },
+            {
+              "name": "Babel"
+            },
+            {
+              "name": "HMR"
+            }
+          ]
+        },
+        {
+          "name": "PAaS",
+          "items": [
+            {
+              "name": "Heroku"
+            },
+            {
+              "name": "AWS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "level": 1,
+      "name": "One Hit Wonder",
+      "hero": {
+        "imageClass": "boy-wonder",
+        "text": "Bedazzle your code like a boy wonder"
+      },
+      "description": "<b>You’re a brogrammer who has moments of greatness with the occasional cult-following.<\/b> This big kick in the ass is all you need in your quest to never stop stopping in your fabled boy band.",
+      "availability": -1,
+      "price": 19.99,
+      "plan": 1,
+      "features": [
+        {
+          "name": "Includes",
+          "items": [
+            {
+              "name": "Super Basic"
+            }
+          ]
+        },
+        {
+          "name": "Components",
+          "items": [
+            {
+              "name": "Super Basic Package"
+            }
+          ]
+        },
+        {
+          "name": "Support",
+          "items": [
+            {
+              "name": "Email"
+            }
+          ]
+        },
+        {
+          "name": "Setup",
+          "items": [
+            {
+              "name": "You"
+            }
+          ]
+        },
+        {
+          "name": "Upgrades",
+          "items": [
+            {
+              "name": "None"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "level": 2,
+      "name": "Air Guitarist",
+      "hero": {
+        "imageClass": "slacker",
+        "text": "Lip sync your code like a slacker poser"
+      },
+      "description": "<b>You’re a slacker who knows good code, but that hasn’t helped you get out of your parents house.<\/b> This hook-up allows your slacker-ass to keep staring at yourself in the mirror, feigning greatness.",
+      "availability": -1,
+      "price": 29.99,
+      "plan": 2,
+      "features": [
+        {
+          "name": "Includes",
+          "items": [
+            {
+              "name": "Basic Package"
+            }
+          ]
+        },
+        {
+          "name": "Components",
+          "items": [
+            {
+              "name": "Intermediate"
+            }
+          ]
+        },
+        {
+          "name": "Support",
+          "items": [
+            {
+              "name": "Email and Phone"
+            }
+          ]
+        },
+        {
+          "name": "Setup",
+          "items": [
+            {
+              "name": "Basic"
+            }
+          ]
+        },
+        {
+          "name": "Upgrades",
+          "items": [
+            {
+              "name": "6 months"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

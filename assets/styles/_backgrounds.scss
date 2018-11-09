@@ -1,0 +1,66 @@
+
+.ludwig-bg-lt,
+.ludwig-bg-dk {
+  position: relative;
+}
+
+.cogs {
+  background: $lt-gry-rad-grad;
+}
+
+.bolts {
+  background: $lt-gry-rad-grad;
+}
+
+.lt-bg-lnr {
+  background: $lt-gry-linear;
+}
+
+.ludwig-bg-lt {
+  background: $lt-gry-rad-grad;
+}
+
+
+.ludwig-bg-dk {
+  background: $lt-gry-blk-rad-grad;
+}
+
+.cogs::after,
+.bolts::after,
+.ludwig-bg-dk::after,
+.ludwig-bg-lt::after {
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+
+.cogs::after {
+  background-image: url(https://s3-us-west-1.amazonaws.com/vellocet/images/backgrounds/cogs-bg.svg);
+  opacity: 0.5;
+  background-size: 100%;
+}
+
+.bolts::after {
+  background-image: url(https://s3-us-west-1.amazonaws.com/vellocet/images/backgrounds/bolts-bg.svg);
+  opacity: 0.5;
+  background-size: 130%;
+}
+
+.ludwig-bg-dk::after {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/backgrounds/ludwig-bg-dk.svg);
+  opacity: 0.1;
+  background-size: 110%;
+  background-position-y: 10%;
+}
+
+.ludwig-bg-lt::after {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/backgrounds/ludwig-bg-wht.svg);
+  opacity: 0.3;
+  background-size: 110%;
+  background-position-y: 10%;
+}

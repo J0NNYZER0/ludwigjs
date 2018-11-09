@@ -1,0 +1,71 @@
+
+// New variables starting from scrath
+
+// Font Family
+$font-title: 'NeutrafaceDisplayTitling';
+$font-bolder: 'NeutrafaceDisplayBold';
+$font-med: 'NeutrafaceDisplayMedium';
+$font-bold: 'NeutrafaceTextBold';
+$font-book: 'NeutrafaceTextBook';
+$font-hero-title: 'NeutrafaceDisplayInline';
+
+// Font Size
+$fs-lg: 2rem;
+$fs-med: 1.75rem;
+$fs-sm: 1.5rem;
+$fs-xs: 1.25rem;
+$fs-xxs: 1.1rem;
+$fs-xxxs: 1rem;
+$fs-xxxxs: .8235rem;
+
+// Font Weight
+$fw-med: 500;
+
+// Colors
+$black: #000;
+$dk-grey: #333;
+$med-grey: #666;
+$lt-grey: #999;
+$md-lt-grey: #E0E0E0;
+$lt-grey: unquote('#d3d3d37d');
+$greyish-white: #F5F5F5;
+$white: #FFF;
+$lime: #CBD93E;
+$lt-lime: #ECF27E;
+$red: #F80000;
+$blue: #5BE;
+
+// Radial Gradients
+$lime-black-rad-grad: radial-gradient(circle, #CBD93E 10%, #000 100%);
+$lt-gry-blk-rad-grad: radial-gradient($greyish-white, $black);
+$x-lt-gry-rad-grad: radial-gradient(#DFDFDE, $greyish-white);
+$lt-gry-rad-grad: radial-gradient(#A5A5A5, $greyish-white);
+$lt-gry-linear: linear-gradient(180deg, #A5A5A5, $greyish-white 60%);
+
+$rad-grad3: radial-gradient(circle, $lt-lime 10%, $lime 100%);
+
+// Shadows
+$shad-a: 2px 2px 4px #000000;
+
+// Icon Size
+$icon-size-xxl: 100px;
+$icon-size-xl: 50px;
+$icon-size-lg: 25px;
+$icon-size-md: 20px;
+$icon-size-sm: 16px;
+
+// Padding and Margin
+$pad-mrg-xl: 50px;
+$pad-mrg-lg: 25px;
+$pad-mrg-md-lg: 20px;
+$pad-mrg-md: 15px;
+$pad-mrg-sm: 10px;
+$pad-mrg-no: 0px;
+
+// Radius
+$rad-md: 6px;
+$rad-sm: 3px;
+
+// Border
+$brd-sz-xl: 6px;
+$brd-sz: 1px;

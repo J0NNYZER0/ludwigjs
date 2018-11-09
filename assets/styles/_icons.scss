@@ -1,0 +1,224 @@
+// CSS for icons
+// All icons are combined in s single icons-sprite.svg file
+// File is located at /assets/img/file
+
+.icon {
+    background: url(../../media/icons-sprite.svg) 1248px 1248px no-repeat;
+    background-size: 1248px 1248px;
+    width: $icon-size-sm;
+    height: $icon-size-sm;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 3px;
+  position: relative;
+  top: -.1em;
+}
+
+.logo {
+  display: inline-block;
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/ludwig.svg) 100% 100% no-repeat;
+}
+
+header .logo {
+  width: $icon-size-xl;
+  height: $icon-size-xl;
+  background-size: $icon-size-xl;
+}
+
+footer .logo {
+  width: $icon-size-lg;
+  height: $icon-size-lg;
+  background-size: $icon-size-lg;
+}
+
+.xl {
+  width: $icon-size-xl;
+  height: $icon-size-xl;
+}
+
+.ludwig {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/ludwig.svg) no-repeat;
+  background-size: 250px;
+  background-position: center;
+}
+
+.wooden-ludwig {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/wooden-ludwig.svg) no-repeat;
+  background-size: 300px;
+  background-position: center;
+}
+
+.magical-blk-box-ludwig {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/magical-black-box-ludwig.svg) no-repeat;
+  background-size: 250px;
+  background-position: center;
+}
+
+.cog {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/cog.svg) no-repeat;
+  background-size: 140px;
+  background-position: center;
+}
+
+.beastie {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/beastie.svg) no-repeat;
+  background-size: 310px;
+  background-position: center;
+}
+
+.rock-star {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/rock-star.svg) no-repeat;
+  background-size: 310px;
+  background-position: center;
+}
+
+.boy-wonder {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/boy-wonder.svg) no-repeat;
+  background-size: 310px;
+  background-position: center;
+}
+
+.slacker {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/slacker.svg) no-repeat;
+  background-size: 310px;
+  background-position: center;
+}
+
+.elf {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/elf.svg) no-repeat;
+  background-size: 150px;
+  background-position: center;
+}
+
+.bolt-top::before,
+.bolt-btm::after {
+  height: $icon-size-lg;
+  width: $icon-size-lg;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  content: ' ';
+  background-image: url(https://s3.us-east-2.amazonaws.com/ui-icons/black/bolt.svg);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bolt-btm::after {
+  bottom: -30px;
+}
+
+.bolt-top::before {
+  top: -30px;
+}
+
+.avatar {
+  background: url(https://s3.us-east-2.amazonaws.com/ui-icons/black/avatar.svg) no-repeat;
+}
+
+.arrow {
+  background: url(https://s3.us-east-2.amazonaws.com/ui-icons/black/arrow.svg) no-repeat;
+  background-size: $icon-size-md;
+}
+
+.arrow.l {
+  transform: scaleX(-1);
+}
+// Animated Menu Icon
+
+#nav-icon {
+  display: inline-block;
+  width: 40px;
+  height: 50px;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #000;
+  border-radius: 9px;
+  opacity: 1;
+  right: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+  top: 10px;
+}
+
+#nav-icon span:nth-child(2),#nav-icon span:nth-child(3) {
+  top: 25px;
+}
+
+#nav-icon span:nth-child(4) {
+  top: 40px;
+}
+
+#nav-icon.close span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  right: 50%;
+}
+
+#nav-icon.close span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+#nav-icon.close span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+#nav-icon.close span:nth-child(4) {
+  top: 17px;
+  width: 0%;
+  right: 50%;
+}
+
+// Close Icon
+
+span.close {
+  position: absolute;
+  right: $pad-mrg-sm;
+  top: $pad-mrg-sm;
+  width: $icon-size-lg;
+  height: $icon-size-lg;
+  opacity: 1;
+  cursor: pointer;
+}
+
+span.close:hover {
+  opacity: 1;
+}
+
+span.close:before, span.close:after {
+  position: absolute;
+  left: $pad-mrg-md;
+  content: ' ';
+  height: $icon-size-lg;
+  width: 2px;
+  background-color: $dk-grey;
+}
+
+span.close:before {
+  transform: rotate(45deg);
+}
+
+span.close:after {
+  transform: rotate(-45deg);
+}
+
+@media only screen  and (max-width : 768px)  {
+
+  .banner {
+    background-position: 50%;
+    height: 290px;
+  }
+}
