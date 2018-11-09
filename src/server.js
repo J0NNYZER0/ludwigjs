@@ -4,7 +4,7 @@ import { StaticRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { CookiesProvider } from 'react-cookie'
 import configureStore from './store/configureStore'
-import App from './components/App'
+import App from './components/app/Index'
 
 module.exports = function render(path, initialState, cookies) {
 
