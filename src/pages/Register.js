@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { Forms } from 'viddy'
+import { Elements, Forms, Message } from 'viddy'
 import { Constants as constants } from '../constants/index'
-import MainTitle from '../components/MainTitle'
-import StatusMessage from '../components/StatusMessage'
 
 class Register extends Component {
 
@@ -21,10 +19,10 @@ class Register extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <MainTitle titleText={`That's Wierd`} />
+            <Elements.MainTitle titleText={`That's Wierd`} />
           </section>
           <section>
-            <StatusMessage
+            <Message
             title={`This Account Already Exists`}
             message={`Try logging in instead`} />
         </section>
@@ -37,10 +35,10 @@ class Register extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <MainTitle titleText={`Check Your Email`} />
+            <Elements.MainTitle titleText={`Check Your Email`} />
           </section>
           <section>
-            <StatusMessage
+            <Message
               title={`A One Time Login Was Sent`}
               message={`Click it to confirm your account and login`} />
           </section>
@@ -52,7 +50,7 @@ class Register extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <MainTitle titleText={`Register`} />
+            <Elements.MainTitle titleText={`Register`} />
           </section>
           <section>
             <Forms.Register {...this.props} />

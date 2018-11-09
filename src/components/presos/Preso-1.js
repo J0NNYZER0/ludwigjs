@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import MainTitle from '../MainTitle'
-import SlideshowWithProgressBar from '../groups/SlideshowWithProgressBar'
+import { Elements, Slideshows } from 'viddy'
 
 class Preso1 extends Component {
 
@@ -23,10 +22,10 @@ class Preso1 extends Component {
     const { buttonText = '', classNames = ''} = this.props
 
     return (
-      <SlideshowWithProgressBar>
+      <Slideshows.WithProgressBar>
         <div className='preso ludwig-bg-dk'>
           <div>
-            <MainTitle classNames={`white txt-shdw`} titleText={`Getting Started`} />
+            <Elements.MainTitle classNames={`white txt-shdw`} titleText={`Getting Started`} />
           </div>
         </div>
         <div className='preso ludwig-bg-dk'>
@@ -128,7 +127,7 @@ class Preso1 extends Component {
             <p>{`(Now you can customize Ludwig and have fun)`}</p>
           </div>
         </div>
-      </SlideshowWithProgressBar>
+      </Slideshows.WithProgressBar>
     )
   }
 }

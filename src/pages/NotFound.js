@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MainTitle from '../components/MainTitle'
+import { Elements } from 'viddy'
 
 class NotFound extends Component {
 
@@ -7,7 +7,7 @@ class NotFound extends Component {
 
     return (
       <section className='t-mrg bolt-btm bolt-top'>
-        <MainTitle titleText={`Not Found`} />
+        <Elements.MainTitle titleText={`Not Found`} />
       </section>
     )
   }

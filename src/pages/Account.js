@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import { Elements } from 'viddy'
 import { Constants as constants } from '../constants/index'
-import MainTitle from '../components/MainTitle'
 
 class Account extends Component {
 
@@ -13,7 +13,7 @@ class Account extends Component {
     return (
       <div>
         <section className='t-mrg bolt-btm bolt-top'>
-          <MainTitle titleText={`Account`} />
+          <Elements.MainTitle titleText={`Account`} />
         </section>
         <section>
           <p>

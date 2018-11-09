@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import { Forms } from 'viddy'
-import MainTitle from '../components/MainTitle'
-import Slideshow from '../components/Slideshow'
+import { Elements, Forms, GridLayouts, Hero, Slideshow } from 'viddy'
 import Preso1 from '../components/presos/Preso-1'
-import Hero from '../components/hero/Index'
-import GridLayout from '../components/grid-layouts/Layout1'
 
 class Plan extends Component {
 
@@ -13,7 +9,7 @@ class Plan extends Component {
     return (
       <div>
         <section className='t-mrg bolt-btm bolt-top'>
-          <MainTitle titleText={`Ludwig JS`} />
+          <Elements.MainTitle titleText={`Ludwig JS`} />
         </section>
         <section className='t-mrg bolt-btm'>
           <Slideshow>
@@ -165,7 +161,7 @@ class Plan extends Component {
               {`This executes an action and display a title`}</li>
             <li><b>{`Company Name - `}</b>
               {`This displays your company name`}</li>
-            <li><b>{`Confirmation - `}</b>
+            <li><b>{`Message - `}</b>
               {`This renders alternative section content, use this to swap
                 content based on a user event`}</li>
             <li><b>{`Copyright - `}</b>
@@ -430,7 +426,7 @@ class Plan extends Component {
             {`No muss or fuss, Ludwig gives developers a rockin' end to end
             boilerplate. If your app needs more fuel check out our packages.`}
           </p>
-          <GridLayout {...this.props} />
+          <GridLayouts.GridLayoutA {...this.props} />
         </section>
         <section className='gry-brdr bolt-top'>
           <h3>{`I Eat My Own Dogfood`}</h3>

@@ -42,7 +42,7 @@
     "serialize-javascript": "^1.5.0",
     "shortid": "^2.2.13",
     "universal-cookie": "^3.0.4",
-    "viddy": "0.0.23"
+    "viddy": "0.0.31"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",

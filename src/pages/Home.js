@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import { Forms } from 'viddy'
-import HeroWithModal from '../components/groups/HeroWithModal'
-import Hero from '../components/hero/Index'
-import GridLayout from '../components/grid-layouts/Layout1'
+import { Forms, GridLayouts, Heros } from 'viddy'
 
 class Home extends Component {
 
@@ -13,7 +10,7 @@ class Home extends Component {
     return (
       <div>
         <section className='t-mrg bolt-btm bolt-top'>
-          <HeroWithModal {...this.props}
+          <Heros.WithModal {...this.props}
             buttonText={`Join the waitlist`}
             classNames='ludwig-bg-dk'
             click={() => actions.ui.modal(!this.props.ui.modal)}
@@ -24,7 +21,7 @@ class Home extends Component {
               contactType={2}
               formTitle={`Join The Waitlist`}
               subject='Join Waitlist' />
-          </HeroWithModal>
+          </Heros.WithModal>
         </section>
         <section className='gry-brdr'>
           <h1>{`A Powerful Full-Stack Javascript Boilerplate`}</h1>
@@ -61,7 +58,7 @@ class Home extends Component {
               momma all have different levels when it comes to using Ludwig,
               we wanna help out.`}
           </p>
-          <GridLayout {...this.props} />
+          <GridLayouts.GridLayoutA {...this.props} />
         </section>
         <section className='gry-brdr bolt-top'>
           <h3>{`Caution: Noobs Beware*`}</h3>

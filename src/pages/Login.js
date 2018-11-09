@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { Forms } from 'viddy'
+import { Elements, Forms, Message } from 'viddy'
 import { Constants as constants } from '../constants/index'
-import MainTitle from '../components/MainTitle'
-import StatusMessage from '../components/StatusMessage'
 
 class Login extends Component {
 
@@ -39,10 +37,10 @@ class Login extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <MainTitle titleText={`Check Your Email`} />
+            <Elements.MainTitle titleText={`Check Your Email`} />
           </section>
           <section>
-          <StatusMessage
+          <Message
             title={`A One Time Login Was Sent`}
             message={`Click it to login`} />
           </section>
@@ -55,10 +53,10 @@ class Login extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <MainTitle titleText={`Whoops`} />
+            <Elements.MainTitle titleText={`Whoops`} />
           </section>
           <section>
-          <StatusMessage
+          <Message
             title={`Something went wrong`}
             message={`Please refresh this page and try again`} />
           </section>
@@ -71,7 +69,7 @@ class Login extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <MainTitle titleText={`Login`} />
+            <Elements.MainTitle titleText={`Login`} />
           </section>
           <section>
             <Forms.Login {...this.props} />

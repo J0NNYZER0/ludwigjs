@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import { Forms } from 'viddy'
-import MainTitle from '../components/MainTitle'
-import Slideshow from '../components/Slideshow'
-import Hero from '../components/hero/Index'
+import { Elements, Forms, Hero, Slideshow } from 'viddy'
 
 class Widgets extends Component {
 
@@ -19,7 +16,7 @@ class Widgets extends Component {
     return (
       <div>
         <section className='t-mrg bolt-btm bolt-top'>
-          <MainTitle titleText={`Contact`} />
+          <Elements.MainTitle titleText={`Contact`} />
         </section>
         <section className='t-mrg bolt-btm'>
           <Slideshow>

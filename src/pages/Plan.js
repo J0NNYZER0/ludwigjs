@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
-import { Forms } from 'viddy'
-import MainTitle from '../components/MainTitle'
-import DangerousHtml from '../components/DangerousHtml'
-import Slideshow from '../components/Slideshow'
-import Hero from '../components/hero/Index'
-import GridLayout from '../components/grid-layouts/Layout1'
+import { Elements, Forms, GridLayouts, Hero, Slideshow } from 'viddy'
 
 class Plan extends Component {
 
@@ -61,7 +56,7 @@ class Plan extends Component {
     return (
       <div>
         <section className='t-mrg bolt-btm bolt-top'>
-          <MainTitle titleText={`${plan.name} Plan`} />
+          <Elements.MainTitle titleText={`${plan.name} Plan`} />
         </section>
         <section className='t-mrg bolt-btm'>
           {hero && <Hero key={1} {...this.props}
@@ -71,9 +66,9 @@ class Plan extends Component {
           </Hero>}
         </section>
         <section className='gry-brdr'>
-          <DangerousHtml>
+          <Elements.DangerousHtml>
             {`${plan.description}`}
-          </DangerousHtml>
+          </Elements.DangerousHtml>
         </section>
         <section className='gry-brdr'>
           <h1>{`The Meanest Little JS Boilerplate`}</h1>
@@ -98,7 +93,7 @@ class Plan extends Component {
             {`No muss or fuss, Ludwig gives developers a rockin' end to end
             boilerplate. If your app needs more fuel check out our packages.`}
           </p>
-          <GridLayout {...this.props} />
+          <GridLayouts.GridLayoutA {...this.props} />
         </section>
         <section>
           <Forms.Contact {...this.props} formTitle={`Request a Demo`} subject='Demo Request' contactType={1} />
