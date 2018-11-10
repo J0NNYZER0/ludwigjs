@@ -373,19 +373,19 @@ class Plan extends Component {
         <section className='bolt-btm'>
           <h2>{`Multiple Levels of Monitoring`}</h2>
           <p>
-            {`Some description...`}
+            {`Coming Soon...`}
           </p>
         </section>
         <section className='bolt-btm'>
           <h2>{`Development Experience`}</h2>
           <p>
-            {`Some description...`}
+            {`Coming Soon...`}
           </p>
         </section>
         <section className='bolt-btm'>
           <h2>{`Configured for Webpack, Babel and Hot Reloading`}</h2>
           <p>
-            {`Some description...`}
+            {`Coming Soon...`}
           </p>
         </section>
         <section className='bolt-btm'>
