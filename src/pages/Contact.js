@@ -22,12 +22,12 @@ class Widgets extends Component {
           <Slideshow>
             <Hero key={1} {...this.props}
               classNames='cogs'
-              text={`I am a Mindless Cog in the Machine`}>
+              text={`I Was a Mindless Cog in the Machine`}>
               <div className='banner cog' />
             </Hero>
             <Hero key={2} {...this.props}
               classNames='bolts'
-              text={`I Want to Be a Magical Full-stack Beast.`}>
+              text={`Now I Am a Magical Full-stack Beast.`}>
               <div className='banner beastie' />
             </Hero>
           </Slideshow>
