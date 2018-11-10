@@ -163,6 +163,19 @@ const Routes = [
       handler: Handlers.Static.Widgets
     }
   },
+  // /api/v1/accounts
+  {
+    method: 'GET',
+    path: '/api/v1/accounts',
+    options: {
+      auth: false,
+      cors: {
+        origin: ['*'],
+        credentials: true
+      },
+      handler: Handlers.Api.Accounts
+    }
+  },
   // /api/v1/contact
   {
     method: 'POST',
@@ -180,6 +193,27 @@ const Routes = [
           subject: Joi.string(),
           contact_type: Joi.number(),
           message: Joi.string()
+        }
+      }
+    }
+  },
+  // /api/v1/login/{sid?}
+  {
+    method: 'GET',
+    path: '/api/v1/disable/{id}',
+    options: {
+      auth: false,
+      cors: {
+        origin: ['*'],
+        credentials: true
+      },
+      pre: [
+        { method: PreHandlers.GetCookies, assign: 'cookies' }
+      ],
+      handler: Handlers.Api.Disable,
+      validate: {
+        params: {
+          id: Joi.string().required()
         }
       }
     }

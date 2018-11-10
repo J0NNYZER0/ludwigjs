@@ -27,6 +27,29 @@ let initialState = {
 
 const Handlers = {
   Api: {
+    Accounts: async (request, h) => {
+
+      let accounts
+
+      console.log('EXECUTE ACCOUNTS HANDLER')
+
+      try {
+
+        console.log('EXECUTE ACCOUNTS SUBMISSION')
+
+        accounts = await QueryHandler('../apis/mysql/queries/select/accounts.sql')
+
+      } catch(e) {
+
+        console.log('ERROR:', e)
+
+        Bounce.rethrow(e, 'system')
+
+      }
+
+      return h.response({ status: 200, data: { accounts } })
+
+    },
     Contact: async (request, h) => {
 
       console.log('EXECUTE CONTACT HANDLER')
@@ -52,6 +75,33 @@ const Handlers = {
       }
 
       return h.response({ status: 200, data: { messageType: 0, message: message } })
+
+    },
+    Disable: async (request, h) => {
+
+      try {
+
+        const accountId = request.params.id,
+          account = await QueryHandler('../apis/mysql/queries/select/account_by_id.sql', [accountId]),
+          _accountStatus = await accountStatus(account.email)
+
+          if (_accountStatus.status === ACCOUNT_STATUS.NON_EXISTENT) {
+
+            return h.response({ status: 200, data: { status: ACCOUNT_STATUS.NON_EXISTENT }, message: STATUS_MESSAGES.NON_EXISTENT })
+
+          } else {
+
+            await QueryHandler('../apis/mysql/queries/update/account_disable.sql', [account.email])
+
+            return h.response({ status: 200, data: { status: ACCOUNT_STATUS.DISABLED, accountId: accountId }, message: `${STATUS_MESSAGES.DISABLED} for ${accountId}` })
+
+          }
+
+      } catch(e) {
+
+        Bounce.rethrow(e, 'system')
+
+      }
 
     },
     Login: async (request, h) => {

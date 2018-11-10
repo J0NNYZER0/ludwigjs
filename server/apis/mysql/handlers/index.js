@@ -29,14 +29,16 @@ module.exports = {
 
       if (err) reject(err) // not connected!
 
-      const sql = FormatSql(ReadSqlFile(pathToSqlFile), values)
+      const sql = values !== undefined ? FormatSql(ReadSqlFile(pathToSqlFile), values) : ReadSqlFile(pathToSqlFile).toString()
 
       return connection.query(sql, (error, results) => {
+
         // When done with the connection, release it.
         connection.release()
 
-        if (error) reject(error)
         // Handle error after the release.
+        if (error) reject(error)
+
         resolve(results)
 
         // Don't use the connection here, it has been returned to the pool.

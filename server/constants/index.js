@@ -1,16 +1,18 @@
 
 const Constants = {
   HOST: (process.env.NODE_ENV === `production`) ? `http://www.ludwigjs.com/` : `http://0.0.0.0:3000/`,
-  ACCOUNT_STATUS: {                       //  is_confirmed | is_in_session | cache
+  ACCOUNT_STATUS: {                       //  is_confirmed | is_in_session | is_disabled | cache
                                           //-----------------------------------------
-    LOGGED_IN: `LOGGED_IN`,               //    true     |    true       | true
-    LOGGED_OUT: `LOGGED_OUT`,             //    true     |    false      | false
-    LOGGING_IN: `LOGGING_IN`,             //    true     |    false      | true
-    NON_EXISTENT: `NON_EXISTENT`,         //    false    |    false      | false
-    SESSION_TIMEOUT: `SESSION_TIMEOUT`,   //    true     |    true       | false
-    UNCONFIRMED: `UNCONFIRMED`            //    false    |    false      | true
+    DISABLED: `DISABLED`,                 //    both     |    both       |    true       |    both
+    LOGGED_IN: `LOGGED_IN`,               //    true     |    true       |    false      |    true
+    LOGGED_OUT: `LOGGED_OUT`,             //    true     |    false      |    false      |    false
+    LOGGING_IN: `LOGGING_IN`,             //    true     |    false      |    false      |    true
+    NON_EXISTENT: `NON_EXISTENT`,         //    false    |    false      |    false      |    false
+    SESSION_TIMEOUT: `SESSION_TIMEOUT`,   //    true     |    true       |    false      |    false
+    UNCONFIRMED: `UNCONFIRMED`            //    false    |    false      |    false      |    true
   },
   ACCOUNT_STATUS_MESSAGES: {
+    DISABLED: `Account is disabled.`,
     LOGGED_IN: `Account is logged in.`,
     LOGGED_OUT: `Account is logged out.`,
     LOGGING_IN: `Account login in progress.`,
