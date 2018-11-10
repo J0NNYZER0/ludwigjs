@@ -15,7 +15,7 @@ class Home extends Component {
             classNames='ludwig-bg-dk'
             click={() => actions.ui.modal(!this.props.ui.modal)}
             title={`Ludwig JS`}
-            text={`A badass fullstack JS boilerplate for rockstar engineers.`}>
+            text={`A badass fullstack JS boilerplate for rockstar engineers`}>
             <Forms.Contact {...this.props}
               callback={() => actions.ui.modal(false)}
               contactType={2}
