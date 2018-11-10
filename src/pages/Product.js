@@ -15,12 +15,12 @@ class Plan extends Component {
           <Slideshow>
             <Hero key={1} {...this.props}
               classNames='lt-bg-lnr'
-              text={`I Wasn't Made by Tiny Elves.`}>
+              text={`I Wasn't Made by Tiny Elves`}>
               <div className='banner wooden-ludwig' />
             </Hero>
             <Hero key={2} {...this.props}
               classNames='lt-bg-lnr'
-              text={`I'm Not a Magical Black Box.`}>
+              text={`I'm Not a Magical Black Box`}>
               <div className='banner magical-blk-box-ludwig' />
             </Hero>
           </Slideshow>
