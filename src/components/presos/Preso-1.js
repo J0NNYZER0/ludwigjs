@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Elements, Slideshows } from 'viddy'
+import { Elements, Slideshows } from '@ludwigjs/ui'
 
 class Preso1 extends Component {
 

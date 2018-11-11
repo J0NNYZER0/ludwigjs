@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Elements } from 'viddy'
+import { Elements } from '@ludwigjs/ui'
 
 class NotFound extends Component {
 

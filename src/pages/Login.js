@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { Elements, Forms, Message } from 'viddy'
+import { Elements, Forms, Message } from '@ludwigjs/ui'
 import { Constants as constants } from '../constants/index'
 
 class Login extends Component {

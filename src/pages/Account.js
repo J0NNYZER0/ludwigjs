@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { Elements } from 'viddy'
+import { Elements } from '@ludwigjs/ui'
 import { Constants as constants } from '../constants/index'
 
 class Account extends Component {

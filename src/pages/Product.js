@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Elements, Forms, GridLayouts, Hero, Slideshow } from 'viddy'
+import { Elements, Forms, GridLayouts, Hero, Slideshow } from '@ludwigjs/ui'
 import Preso1 from '../components/presos/Preso-1'
 
 class Plan extends Component {

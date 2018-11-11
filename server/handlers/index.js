@@ -23,7 +23,22 @@ let initialState = {
   products: Data.Products.data,
   ui: { modal: false },
   widgets: Data.Widgets.data
-}
+},
+switchAccountStatus = (accountStatus, status) => new Promise(resolve => {
+
+     if (status === ACCOUNT_STATUS.LOGGED_IN) {
+       accountStatus.account.is_confirmed = 1
+       accountStatus.account.is_in_session = 1
+     }
+
+     accountStatus.status = status
+     accountStatus.message = status
+     accountStatus.account.status = status
+     accountStatus.account.message = status
+
+     resolve(accountStatus)
+
+})
 
 const Handlers = {
   Api: {
@@ -158,12 +173,7 @@ const Handlers = {
 
               const sid = ShortId.generate()
 
-              _accountStatus.account.is_confirmed = 1
-              _accountStatus.account.is_in_session = 1
-              _accountStatus.status = ACCOUNT_STATUS.LOGGED_IN
-              _accountStatus.message = STATUS_MESSAGES.LOGGED_IN
-              _accountStatus.account.status = ACCOUNT_STATUS.LOGGED_IN
-              _accountStatus.account.message = STATUS_MESSAGES.LOGGED_IN
+              _accountStatus = await switchAccountStatus(_accountStatus, ACCOUNT_STATUS.LOGGED_IN)
 
               await request.server.app.cache.set(sid, _accountStatus.account, 0)
 
@@ -228,10 +238,7 @@ const Handlers = {
 
           console.log('token /' + sid)
 
-          _accountStatus.status = ACCOUNT_STATUS.LOGGING_IN
-          _accountStatus.message = STATUS_MESSAGES.LOGGING_IN
-          _accountStatus.account.status = ACCOUNT_STATUS.LOGGING_IN
-          _accountStatus.account.message = STATUS_MESSAGES.LOGGIN_IN
+          _accountStatus = await switchAccountStatus(_accountStatus, ACCOUNT_STATUS.LOGGING_IN)
 
           await request.server.app.cache.set(sid, _accountStatus.account, 0)
 

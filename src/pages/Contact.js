@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Elements, Forms, Hero, Slideshow } from 'viddy'
+import { Elements, Forms, Hero, Slideshow } from '@ludwigjs/ui'
 
 class Widgets extends Component {
 
