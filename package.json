@@ -4,7 +4,7 @@
   "description": "A badass fullstack JS boilerplate for the rockstar engineer.",
   "main": "index.js",
   "scripts": {
-    "heroku-prebuild": "node ./scripts/set-npmrc.js",
+    "heroku-prebuild": "echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
     "local": "source ~/envs/hapi-react-ssr/env && nodemon server/index.js",
