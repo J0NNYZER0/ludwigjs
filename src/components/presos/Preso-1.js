@@ -25,7 +25,7 @@ class Preso1 extends Component {
       <Slideshows.WithProgressBar>
         <div className='preso ludwig-bg-dk'>
           <div>
-            <Elements.MainTitle classNames={`white txt-shdw`} titleText={`Getting Started`} />
+            <Elements.PageTitle classNames={`white txt-shdw`} titleText={`Getting Started`} />
           </div>
         </div>
         <div className='preso ludwig-bg-dk'>

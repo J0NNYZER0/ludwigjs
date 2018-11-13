@@ -17,7 +17,7 @@
     "build": "npm run webpack && npm run babel"
   },
   "dependencies": {
-    "@ludwigjs/ui": "0.0.16",
+    "@ludwigjs/ui": "0.0.17",
     "aws-sdk": "^2.354.0",
     "good": "^8.1.1",
     "good-console": "^7.1.0",
@@ -30,9 +30,9 @@
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.22.2",
     "mysql": "^2.16.0",
-    "react": "^16.5.2",
+    "react": "^16.6.3",
     "react-cookie": "^3.0.4",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.6.3",
     "react-favicon": "0.0.14",
     "react-hot-loader": "^4.3.12",
     "react-redux": "^5.1.1",
