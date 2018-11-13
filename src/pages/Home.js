@@ -16,6 +16,7 @@ class Home extends Component {
             click={() => actions.ui.modal(!this.props.ui.modal)}
             title={`Ludwig JS`}
             text={`A badass fullstack JS boilerplate for rockstar engineers`}>
+            <h1>Join the Waitlist</h1>
             <Forms.Contact {...this.props}
               callback={() => actions.ui.modal(false)}
               contactType={2}
@@ -81,6 +82,7 @@ class Home extends Component {
           </p>
         </section>
         <section className='bolt-btm'>
+          <h1>Request A Demo</h1>
           <Forms.Contact {...this.props} formTitle={`Request a Demo`}
             subject='Demo Request' contactType={1} />
         </section>

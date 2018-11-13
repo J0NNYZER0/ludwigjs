@@ -16,7 +16,7 @@ class Widgets extends Component {
     return (
       <div>
         <section className='t-mrg bolt-btm bolt-top'>
-          <Elements.MainTitle titleText={`Contact`} />
+          <Elements.PageTitle titleText={`Contact`} />
         </section>
         <section className='t-mrg bolt-btm'>
           <Slideshow>

@@ -155,7 +155,7 @@ MODAL AND NOTIFICATION
 }
 
 .notifications.show  {
-  z-index: 2;
+  z-index: 3;
 }
 
 div.notifications > div {
@@ -170,6 +170,24 @@ div.notifications > div {
 
 .m-body {
   flex: 1;
+}
+
+/*
+============================================================
+FORM VALIDATION
+============================================================
+*/
+
+.validation {
+  width: 100%;
+  padding: 15px;
+  margin: 0 0 15px;
+  background-color: #F00;
+  border: 1px solid #666;
+}
+
+.validation ul {
+  margin: auto 25px;
 }
 
 /*

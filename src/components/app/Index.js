@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { withCookies, Cookies } from 'react-cookie'
-import { Layout, Modal, Notification } from '@ludwigjs/ui'
+import { Layout, Notification } from '@ludwigjs/ui'
 import * as accountActions from '../../actions/account'
 import * as contactActions from '../../actions/contact'
 import * as productsActions from '../../actions/products'
@@ -36,7 +36,6 @@ class App extends Component {
 
     return [
       <Favicon key='favicon' url='https://s3-us-west-1.amazonaws.com/vellocet/images/ludwig.ico' />,
-      <Modal key='modal' {...this.props} />,
       <Layout.Header key='header' logout={this.logout} {...this.props} />,
       <Notification key='notifcations' {...this.props} />,
       <Main key='main' {...this.props} />,
