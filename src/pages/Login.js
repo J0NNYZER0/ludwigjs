@@ -37,7 +37,7 @@ class Login extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <Elements.MainTitle titleText={`Check Your Email`} />
+            <Elements.PageTitle titleText={`Check Your Email`} />
           </section>
           <section>
           <Message
@@ -53,7 +53,7 @@ class Login extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <Elements.MainTitle titleText={`Whoops`} />
+            <Elements.PageTitle titleText={`Whoops`} />
           </section>
           <section>
           <Message
@@ -69,7 +69,7 @@ class Login extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <Elements.MainTitle titleText={`Login`} />
+            <Elements.PageTitle titleText={`Login`} />
           </section>
           <section>
             <Forms.Login {...this.props} />

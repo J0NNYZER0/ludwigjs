@@ -17,7 +17,7 @@
     "build": "npm run webpack && npm run babel"
   },
   "dependencies": {
-    "@ludwigjs/ui": "0.0.15",
+    "@ludwigjs/ui": "0.0.16",
     "aws-sdk": "^2.354.0",
     "good": "^8.1.1",
     "good-console": "^7.1.0",

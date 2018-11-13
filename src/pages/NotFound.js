@@ -7,7 +7,7 @@ class NotFound extends Component {
 
     return (
       <section className='t-mrg bolt-btm bolt-top'>
-        <Elements.MainTitle titleText={`Not Found`} />
+        <Elements.PageTitle titleText={`Not Found`} />
       </section>
     )
   }

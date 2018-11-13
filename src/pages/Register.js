@@ -19,7 +19,7 @@ class Register extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <Elements.MainTitle titleText={`That's Wierd`} />
+            <Elements.PageTitle titleText={`That's Wierd`} />
           </section>
           <section>
             <Message
@@ -35,7 +35,7 @@ class Register extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <Elements.MainTitle titleText={`Check Your Email`} />
+            <Elements.PageTitle titleText={`Check Your Email`} />
           </section>
           <section>
             <Message
@@ -50,7 +50,7 @@ class Register extends Component {
       return (
         <div>
           <section className='t-mrg bolt-btm bolt-top'>
-            <Elements.MainTitle titleText={`Register`} />
+            <Elements.PageTitle titleText={`Register`} />
           </section>
           <section>
             <Forms.Register {...this.props} />

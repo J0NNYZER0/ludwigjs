@@ -13,7 +13,7 @@ class Account extends Component {
     return (
       <div>
         <section className='t-mrg bolt-btm bolt-top'>
-          <Elements.MainTitle titleText={`Account`} />
+          <Elements.PageTitle titleText={`Account`} />
         </section>
         <section>
           <p>

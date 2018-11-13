@@ -9,7 +9,7 @@ class Plan extends Component {
     return (
       <div>
         <section className='t-mrg bolt-btm bolt-top'>
-          <Elements.MainTitle titleText={`Ludwig JS`} />
+          <Elements.PageTitle titleText={`Ludwig JS`} />
         </section>
         <section className='t-mrg bolt-btm'>
           <Slideshow>
