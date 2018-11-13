@@ -56,7 +56,7 @@ class Plan extends Component {
     return (
       <div>
         <section className='t-mrg bolt-btm bolt-top'>
-          <Elements.MainTitle titleText={`${plan.name} Plan`} />
+          <Elements.PageTitle titleText={`${plan.name} Plan`} />
         </section>
         <section className='t-mrg bolt-btm'>
           {hero && <Hero key={1} {...this.props}
