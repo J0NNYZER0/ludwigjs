@@ -4,7 +4,7 @@ import { AppContainer } from 'react-hot-loader'
 import configureStore from './../store/configureStore'
 import Prod from '../components/app/Prod'
 import '../../assets/styles/all.scss'
-
+require('../../favicon.ico')
 // Create a fresh store
 const store = configureStore()
 

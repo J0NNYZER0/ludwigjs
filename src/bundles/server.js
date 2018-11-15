@@ -3,7 +3,7 @@ import {hydrate} from 'react-dom'
 import configureStore from './../store/configureStore'
 import Root from './../components/app/Prod'
 import '../../assets/styles/all.scss'
-
+require('../../favicon.ico')
 // Read the state sent with markup
 const state = window.__STATE__
 

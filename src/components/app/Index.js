@@ -8,7 +8,6 @@ import * as accountActions from '../../actions/account'
 import * as contactActions from '../../actions/contact'
 import * as productsActions from '../../actions/products'
 import * as uiActions from '../../actions/ui'
-import Favicon from 'react-favicon'
 import Main from '../Main'
 
 class App extends Component {
@@ -35,7 +34,7 @@ class App extends Component {
     const { account, actions } = this.props
 
     return [
-      <Favicon key='favicon' url='https://s3-us-west-1.amazonaws.com/vellocet/images/ludwig.ico' />,
+
       <Layout.Header key='header' logout={this.logout} {...this.props} />,
       <Notification key='notifcations' {...this.props} />,
       <Main key='main' {...this.props} />,

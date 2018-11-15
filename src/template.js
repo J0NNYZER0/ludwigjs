@@ -14,6 +14,7 @@ function template(title, initialState = {}, content = "") {
       <html>
         <head>
           <title>${title}</title>
+          <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
           <link href='/assets/styles/all.css' rel='stylesheet'/>
         </head>
         <body>
