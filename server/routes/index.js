@@ -66,10 +66,10 @@ const Routes = [
       handler: Handlers.Static.Contact
     }
   },
-  // /dev/cache/{token}
+  // /dev/cache/{token?}
   {
     method:'GET',
-    path:'/dev/cache/{token}',
+    path:'/dev/cache/{token?}',
     options: {
       auth: false,
       cache: {

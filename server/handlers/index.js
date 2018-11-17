@@ -175,9 +175,9 @@ const Handlers = {
 
               _accountStatus = await switchAccountStatus(_accountStatus, ACCOUNT_STATUS.LOGGED_IN)
 
-              await request.server.app.cache.set(sid, _accountStatus.account, 0)
-
               request.server.app.cache.rules({ expiresIn: 1 * 60 * 60 * 1000 })
+
+              await request.server.app.cache.set(sid, _accountStatus.account, 0)
 
               request.cookieAuth.set({ sid })
 
@@ -240,9 +240,9 @@ const Handlers = {
 
           _accountStatus = await switchAccountStatus(_accountStatus, ACCOUNT_STATUS.LOGGING_IN)
 
-          await request.server.app.cache.set(sid, _accountStatus.account, 0)
-
           request.server.app.cache.rules({ expiresIn: 10 * 60 * 1000 })
+
+          await request.server.app.cache.set(sid, _accountStatus.account, 0)
 
           request.cookieAuth.set({ sid })
 
@@ -364,8 +364,15 @@ const Handlers = {
         cache = request.server.app.cache
 
       try {
+        if (request.params) {
 
-        session = await cache.get(token)
+          session = await cache.get(token)
+
+        } else {
+
+          session = cache
+
+        }
 
       } catch(e) {
 

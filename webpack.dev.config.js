@@ -71,7 +71,18 @@ module.exports = {
           loader: 'svg-url-loader',
           options: {}
         }
-      }
+      },
+      {
+        test: /\.(jpe?g|png|gif|ico)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]'
+            }
+          }
+        ]
+      },
     ]
  }
 }
