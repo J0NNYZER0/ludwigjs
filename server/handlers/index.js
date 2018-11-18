@@ -393,7 +393,23 @@ const Handlers = {
         const _initialState = {...initialState, account: request.pre.account},
           { content, preloadedState }  = ssr(request.url.path, _initialState)
 
-        let response = template("Account Page", preloadedState, content)
+        let response = template("Account", preloadedState, content)
+
+        return h.response(response)
+
+      } catch(e) {
+
+        Bounce.rethrow(e, 'system')
+
+      }
+    },
+    Accounts: async (request,h) => {
+      try {
+
+        const _initialState = {...initialState, account: request.pre.account},
+          { content, preloadedState }  = ssr(request.url.path, _initialState)
+
+        let response = template("Accounts", preloadedState, content)
 
         return h.response(response)
 
