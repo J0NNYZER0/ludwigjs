@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Account from '../pages/Account'
+import Accounts from '../pages/Accounts'
 import Contact from '../pages/Contact'
 import Home from '../pages/Home'
 import Login from '../pages/Login'
@@ -34,6 +35,8 @@ class Main extends Component {
          render={props => (<Login {...this.props} {...props} />)} />
        <Route key='/account' path='/account'
          render={props => (<Account {...this.props} {...props} />)} />
+       <Route key='/accounts' path='/accounts'
+         render={props => (<Accounts {...this.props} {...props} />)} />
        <Route key='/notfound' path='/notfound'
          render={props => (<NotFound {...this.props} {...props} />)} />
      </Switch>

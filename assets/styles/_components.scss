@@ -125,6 +125,60 @@ ul.category-items > li:last-child:after {
 
 /*
 ============================================================
+TABLES
+============================================================
+*/
+
+.tbl {
+  display: flex;
+  flex-direction: column;
+}
+
+.tbl > ul.tbl-hdr {
+  border-bottom: 1px solid #000;
+}
+
+.tbl > ul:not(.tbl-hdr),
+.tbl > ul.tbl-hdr {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.tbl > ul.tbl-hdr {
+  display: none;
+}
+
+.tbl:first-child > ul.tbl-hdr {
+  display: flex;
+}
+
+.tbl > ul.tbl-hdr > li,
+.tbl > ul:not(.tbl-hdr) > li {
+  flex: 1;
+  padding: 15px;
+}
+
+.tbl > ul.tbl-hdr > li {
+  text-align: center;
+}
+
+.tbl {
+  font-size: 1.1rem;
+}
+
+.tbl-bdy {
+  border-bottom: 1px solid #DDD;
+
+}
+
+.tbl:last-child > ul.tbl-bdy {
+  border: none;
+}
+
+/*
+============================================================
 MODAL AND NOTIFICATION
 ============================================================
 */
@@ -543,6 +597,9 @@ MEDIA QUERY - 768px
     display: inline-block;
     padding: 15px;
   }
+  .ddm-btn.minus {
+    padding: 15px 15px 25px;
+  }
 
   .ddm-btn.plus::after,
   .ddm-btn.minus::after {
@@ -559,11 +616,7 @@ MEDIA QUERY - 768px
     border: none;
   }
 
-  ul.ddm > li:first-child {
-    padding-bottom: 0;
-  }
-
-  ul.ddm > li:last-child {
+  ul.ddm > li {
     padding-top: 0;
   }
 
@@ -588,5 +641,57 @@ MEDIA QUERY - 768px
     width: 100%;
     flex: 1;
   }
+
+  /*
+  ============================================================
+  TABLES
+  ============================================================
+  */
+
+  .tblgrp > .tbl > .tbl-hdr {
+    display: flex;
+  }
+
+  .tbl {
+    flex-direction: row;
+    border-bottom: 1px solid #000;
+  }
+
+  .tbl:last-child,
+  .tbl > ul.tbl-hdr {
+    border-bottom: none;
+  }
+
+  .tbl > ul:not(.tbl-hdr),
+  .tbl > ul.tbl-hdr {
+    flex-direction: column;
+  }
+
+  .tbl > ul.tbl-hdr {
+    width: auto;
+  }
+
+  .tbl > ul.tbl-hdr > li,
+  .tbl > ul:not(.tbl-hdr) > li {
+    padding-right: 15px;
+    border-bottom: 1px solid #DDD;
+  }
+
+  .tbl > ul.tbl-hdr > li {
+    text-align: right;
+  }
+
+  .tbl > ul.tbl-hdr > li::after {
+    content: ':';
+  }
+
+  .tbl > ul:not(.tbl-hdr):last-child {
+    border: none;
+  }
+
+  .tbl > ul > li:last-child {
+    border: none;
+  }
+
 
 }

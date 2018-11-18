@@ -147,6 +147,26 @@ const Api = [
   }
 ]
 
+const Dev = [
+  // /dev/cache/{token?}
+  {
+    method:'GET',
+    path:'/dev/cache/{token?}',
+    options: {
+      auth: false,
+      cache: {
+        expiresIn: 30 * 1000,
+        privacy: 'public'
+      },
+      pre: [
+        { method: PreHandlers.GetCookies, assign: 'cookies' },
+        { method: PreHandlers.GetAccount, assign: 'account' }
+      ],
+      handler: Handlers.Dev.Cache
+    }
+  }
+]
+
 const Static = [
   // /
   {
@@ -182,6 +202,10 @@ const Static = [
     method:'GET',
     path:'/accounts',
     options: {
+      auth: {
+        strategy: 'session',
+        scope: [ 'admin', 'super-admin' ]
+      },
       pre: [
         { method: PreHandlers.GetCookies, assign: 'cookies' },
         { method: PreHandlers.GetAccount, assign: 'account' }
@@ -218,23 +242,6 @@ const Static = [
         { method: PreHandlers.GetAccount, assign: 'account' }
       ],
       handler: Handlers.Static.Contact
-    }
-  },
-  // /dev/cache/{token?}
-  {
-    method:'GET',
-    path:'/dev/cache/{token?}',
-    options: {
-      auth: false,
-      cache: {
-        expiresIn: 30 * 1000,
-        privacy: 'public'
-      },
-      pre: [
-        { method: PreHandlers.GetCookies, assign: 'cookies' },
-        { method: PreHandlers.GetAccount, assign: 'account' }
-      ],
-      handler: Handlers.Dev.Cache
     }
   },
   // /login/{sid?}
@@ -321,6 +328,7 @@ const Static = [
 
 const Routes = [].concat(
   Api,
+  Dev,
   Static
 )
 

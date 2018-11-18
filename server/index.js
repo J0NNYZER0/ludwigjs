@@ -42,8 +42,8 @@ async function start() {
           out = { valid: !!cached }
 
         if (out.valid) {
-
-          out.credentials = cached
+          
+          out.credentials = { scope: cached.scope.split(',') }
         }
 
         return out
