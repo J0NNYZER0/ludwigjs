@@ -1,5 +1,5 @@
 'use strict'
-//jon.ortiz@me.com
+
 const Constants = require('../constants'),
   ACCOUNT_STATUS = Constants.ACCOUNT_STATUS,
   STATUS_MESSAGES = Constants.ACCOUNT_STATUS_MESSAGES
