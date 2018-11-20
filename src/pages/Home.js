@@ -82,7 +82,7 @@ class Home extends Component {
           </p>
         </section>
         <section className='bolt-btm'>
-          <h1>Request A Demo</h1>
+          <h3>Request A Demo</h3>
           <Forms.Contact {...this.props} formTitle={`Request a Demo`}
             subject='Demo Request' contactType={1} />
         </section>

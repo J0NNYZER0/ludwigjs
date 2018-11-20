@@ -7,7 +7,7 @@
     "heroku-prebuild": "echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "local": "source ~/envs/hapi-react-ssr/env && nodemon server/index.js",
+    "local": "source ~/envs/ludwig/env && nodemon server/index.js",
     "webpack-local": "webpack-dev-server --config webpack.dev.config.js",
     "webpack": "webpack --config webpack.prod.config.js",
     "babel-local": "babel src -d compiled",
@@ -17,8 +17,8 @@
     "build": "npm run webpack && npm run babel"
   },
   "dependencies": {
-    "@ludwigjs/ui": "0.0.18",
-    "aws-sdk": "^2.358.0",
+    "@ludwigjs/ui": "0.0.20",
+    "aws-sdk": "^2.359.0",
     "good": "^8.1.1",
     "good-console": "^7.1.0",
     "good-file": "^6.0.1",
@@ -64,7 +64,7 @@
     "sass-loader": "^7.1.0",
     "svg-url-loader": "^2.3.2",
     "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack": "^4.20.2",
+    "webpack": "^4.26.0",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
   },

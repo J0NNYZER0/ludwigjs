@@ -179,6 +179,56 @@ TABLES
 
 /*
 ============================================================
+ACCORDION
+============================================================
+*/
+.accordion {
+  margin-bottom: 10px;
+}
+
+.accordion > div:first-child {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  border-radius: 6px;
+}
+
+.accordion > div:first-child:hover {
+   background-color: #ccc;
+ }
+
+.accordion > div:first-child > h2 {
+  margin: 0;
+  font-family: $font-bold;
+}
+
+.accordion > div:first-child > h2::after {
+    content: ' [+]'
+}
+
+.accordion.active > div:first-child > h2::after {
+    content: ' [-]'
+}
+
+.accordion > div:nth-child(2) {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+
+.accordion.active > div:nth-child(2) {
+  display: block;
+  padding: 20px;
+}
+
+/*
+============================================================
 MODAL AND NOTIFICATION
 ============================================================
 */

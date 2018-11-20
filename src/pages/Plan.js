@@ -96,6 +96,7 @@ class Plan extends Component {
           <GridLayouts.GridLayoutA {...this.props} />
         </section>
         <section>
+          <h3>Request A Demo</h3>
           <Forms.Contact {...this.props} formTitle={`Request a Demo`} subject='Demo Request' contactType={1} />
         </section>
       </div>

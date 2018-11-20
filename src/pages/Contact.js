@@ -33,6 +33,7 @@ class Widgets extends Component {
           </Slideshow>
         </section>
         <section>
+          <h3>Say Hello</h3>
           <Forms.Contact {...this.props} formTitle={``} subject='General Request' contactType={0} />
         </section>
       </div>
