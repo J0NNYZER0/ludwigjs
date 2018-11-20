@@ -234,7 +234,7 @@ const Handlers = {
 
           const sid = ShortId.generate()
 
-          await Email('Login at Ludwig UI', `${HOST}login/`, payload.email, sid, 'Login')
+          await Email('Login at Ludwig UI', _accountStatus.account.first_name, `${HOST}login/`, payload.email, sid, 'Login')
 
           console.log('token /' + sid)
 
@@ -321,7 +321,7 @@ const Handlers = {
 
           const sid = ShortId.generate()
 
-          await Email('Login at Ludwig UI',`${HOST}login/`, payload.email, sid, 'Login')
+          await Email('Login at Ludwig UI', payload.first_name, `${HOST}login/`, payload.email, sid, 'Login')
 
           let newAccount = { ...payload, is_confirmed: 0, is_in_session: 0 }
 

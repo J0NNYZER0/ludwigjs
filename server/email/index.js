@@ -5,9 +5,10 @@ const Bounce = require('bounce'),
 	Path = require('path'),
   Aws = require('aws-sdk')
 
-const ParseEmail = (uri, shortId, buttonText) => new Promise ((resolve) => {
+const ParseEmail = (firstName, uri, shortId, buttonText) => new Promise ((resolve) => {
 
   let parsed = Fs.readFileSync(Path.join(__dirname, './templates/index.html'), 'utf8')
+  parsed = parsed.replace(/%%FIRST_NAME%%/, firstName)
   parsed = parsed.replace(/%%URL%%/, uri)
 	parsed = parsed.replace(/%%TOKEN%%/, shortId)
   parsed = parsed.replace(/%%BUTTON_TEXT%%/, buttonText)
@@ -15,7 +16,7 @@ const ParseEmail = (uri, shortId, buttonText) => new Promise ((resolve) => {
 	resolve(parsed)
 })
 
-const SesMailOptions = (subject, email, shortId, parsedEmail) => new Promise(resolve => resolve({
+const SesMailOptions = (subject, firstName, uri, email, shortId, parsedEmail) => new Promise(resolve => resolve({
   Destination: {
    ToAddresses: [
       email
@@ -24,16 +25,16 @@ const SesMailOptions = (subject, email, shortId, parsedEmail) => new Promise(res
   Message: {
    Body: {
     Html: {
-     Charset: "UTF-8",
+     Charset: 'UTF-8',
      Data: parsedEmail
     },
     Text: {
-     Charset: "UTF-8",
-     Data: 'Copy and paste this link - http://0.0.0.0:3000/confirm/' + shortId + ' . It can only be used once. It expires in 10 minutes.'
+     Charset: 'UTF-8',
+     Data: `Hi ${firstName} Click or copy/paste this link to log in once - ${uri} ${shortId}. It can only be used once. It expires in 10 minutes.`
     }
    },
    Subject: {
-    Charset: "UTF-8",
+    Charset: 'UTF-8',
     Data: subject
    }
   },
@@ -48,10 +49,10 @@ const SendEmail = (mailOptions) => new Promise((resolve, reject) => {
   })
 })
 
-const Email = async (subject, uri, email, shortId, buttonText) => {
+const Email = async (subject, firstName, uri, email, shortId, buttonText) => {
   try {
-    const parsedEmail = await ParseEmail(uri, shortId, buttonText),
-      mailOptions = await SesMailOptions(subject, email, shortId, parsedEmail),
+    const parsedEmail = await ParseEmail(firstName, uri, shortId, buttonText),
+      mailOptions = await SesMailOptions(subject, firstName, uri, email, shortId, parsedEmail),
       sentEmail = await SendEmail(mailOptions)
 
     return sentEmail
