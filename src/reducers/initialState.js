@@ -1,5 +1,6 @@
 export default {
   account: {},
+  accounts: [],
   messages: [],
   products: [],
   ui: {

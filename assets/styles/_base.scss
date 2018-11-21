@@ -118,6 +118,11 @@ a, a:link, .logout{
     cursor: pointer;
 }
 
+.logout {
+  display: block;
+  padding: 8px 16px;
+}
+
 a:active, a:hover, .logout:hover {
   text-decoration: underline;
 }

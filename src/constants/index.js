@@ -9,6 +9,9 @@ const Constants = {
     UNCONFIRMED: 'UNCONFIRMED'
   },
   ACTIONS: {
+    ACCOUNTS: {
+      LOAD: 'ACCOUNTS_LOAD'
+    },
     MESSAGES: {
       SUCCESS: 'MESSAGE_SUCCESS'
     },
@@ -31,6 +34,7 @@ const Constants = {
   },
   URI: {
     API: {
+      ACCOUNTS: `/api/v1/accounts`,
       CONTACT: `/api/v1/contact`,
       CONFIRM: `/api/v1/confirm/`,
       LOGIN: `/api/v1/login/`,
