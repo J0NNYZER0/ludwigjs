@@ -280,6 +280,8 @@ ELEMENTS - TOOLTIP
     position: absolute;
     z-index: 1;
     white-space: nowrap;
+    margin-left: calc(-100% - 5px);
+    margin-top: -4px;
 }
 
 .tooltip:hover .tooltiptext {
