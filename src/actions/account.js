@@ -94,3 +94,19 @@ export const reconfirm = data => {
     })
   }
 }
+
+
+export const updateRole = data => {
+
+  return dispatch => {
+
+    return api.updateRole(data).then(response => {
+
+      //dispatch(success(response.data))
+
+    }).catch(error => {
+
+      throw(error)
+    })
+  }
+}
