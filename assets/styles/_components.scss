@@ -714,6 +714,7 @@ MEDIA QUERY - 768px
     display: inline-block;
     padding: 15px;
   }
+
   .ddm-btn.minus {
     padding: 15px 15px 25px;
   }
@@ -721,6 +722,11 @@ MEDIA QUERY - 768px
   .ddm-btn.plus::after,
   .ddm-btn.minus::after {
     right: -5px;
+  }
+
+  .multi-select-input > .ddm-btn.plus::after,
+  .multi-select-input > .ddm-btn.minus::after {
+    right: -15px;
   }
 
   ul.ddm.show {
@@ -816,5 +822,14 @@ MEDIA QUERY - 768px
     border: none;
   }
 
+  /*
+  ============================================================
+  MULTISELECT MENU
+  ============================================================
+  */
+
+  .tbl:last-child .multi-select-input > .menu {
+    margin-top: -200px;
+  }
 
 }

@@ -45,7 +45,7 @@ class Accounts extends Component {
           <Elements.PageTitle titleText={`Accounts`} />
         </section>
         <section>
-          <Table accounts={accounts} />
+          <Table {...this.props} accounts={accounts} />
         </section>
       </div>
     )
