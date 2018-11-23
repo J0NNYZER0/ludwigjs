@@ -1,7 +1,0 @@
-export CLEARDB_DATABASE_URL=root:password123@localhost:3306/ludwig
-export SECURITY_TOKEN_SECRET='$k!1Ls2P@y7h3B!l1$'
-export AWS_REGION=us-west-2
-export AWS_ACCESS_KEY_ID=AKIAJTTTP5HAD7RIO5BQ
-export AWS_SECRET_ACCESS_KEY=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
-export LOGIN_EMAIL=noreply@ludwigjs.com
-export NPM_TOKEN=b71c22df-d2ef-4858-9798-ba8f383dc997
