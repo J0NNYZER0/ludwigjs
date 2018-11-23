@@ -8,7 +8,13 @@ const Constants = {
     NON_EXISTENT: 'NON_EXISTENT',
     UNCONFIRMED: 'UNCONFIRMED'
   },
+  ACCOUNT_ROLE: {
+    MODIFIED: 'ACCOUNT_ROLE_MODIFIED'
+  },
   ACTIONS: {
+    ACCOUNTS: {
+      LOAD: 'ACCOUNTS_LOAD'
+    },
     MESSAGES: {
       SUCCESS: 'MESSAGE_SUCCESS'
     },
@@ -31,6 +37,7 @@ const Constants = {
   },
   URI: {
     API: {
+      ACCOUNTS: `/api/v1/accounts`,
       CONTACT: `/api/v1/contact`,
       CONFIRM: `/api/v1/confirm/`,
       LOGIN: `/api/v1/login/`,
@@ -38,6 +45,7 @@ const Constants = {
       LOGOUT: `/api/v1/logout`,
       RECONFIRM: `/api/v1/reconfirm`,
       REGISTER: `/api/v1/register`,
+      ROLE: `/api/v1/role`,
       WIDGETS: `/api/v1/widgets`
     },
     ASSETS: {

@@ -97,6 +97,25 @@ class Api {
     })
   }
 
+  static updateRole(data) {
+
+    return new Promise((resolve, reject) => {
+
+      const encodedURI = encodeURI(`${constants.URI.API.ROLE}`)
+
+      fetch(encodedURI, {
+        credentials: 'include',
+        headers: {
+          'Accept': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(response => resolve(response.json()))
+      .catch(err => reject(err))
+    })
+  }
+
 }
 
 export { Api }

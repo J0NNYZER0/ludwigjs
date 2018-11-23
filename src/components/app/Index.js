@@ -5,6 +5,7 @@ import { withRouter } from 'react-router'
 import { withCookies, Cookies } from 'react-cookie'
 import { Layout, Notification } from '@ludwigjs/ui'
 import * as accountActions from '../../actions/account'
+import * as accountsActions from '../../actions/accounts'
 import * as contactActions from '../../actions/contact'
 import * as productsActions from '../../actions/products'
 import * as uiActions from '../../actions/ui'
@@ -45,14 +46,15 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   account: state.account,
+  accounts: state.accounts,
   messages: state.messages,
   products: state.products,
-  ui: state.ui,
-  widgets: state.widgets
+  ui: state.ui
 }),
 mapDispatchToProps = dispatch => ({
   actions: {
     account: bindActionCreators(accountActions, dispatch),
+    accounts: bindActionCreators(accountsActions, dispatch),
     contact: bindActionCreators(contactActions, dispatch),
     products: bindActionCreators(productsActions, dispatch),
     ui: bindActionCreators(uiActions, dispatch)

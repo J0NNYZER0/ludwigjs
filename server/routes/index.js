@@ -136,6 +136,28 @@ const Api = [
       }
     }
   },
+  // /api/v1/role
+  {
+    method: 'POST',
+    path: '/api/v1/role',
+    options: {
+      auth: {
+        strategy: 'session',
+        scope: [ 'super-admin' ]
+      },
+      cors: {
+        origin: ['*'],
+        credentials: true
+      },
+      handler: Handlers.Api.Role,
+      validate: {
+        payload: {
+          id: Joi.number(),
+          scope: Joi.string()
+        }
+      }
+    }
+  },
   // /{p*}
   {
     method: '*',

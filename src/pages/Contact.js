@@ -6,9 +6,7 @@ class Widgets extends Component {
   constructor(props) {
 
     super(props)
-    this.state = {
-      loading: props.widgets.length === 0
-    }
+    
   }
 
   render() {

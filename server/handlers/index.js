@@ -2,6 +2,7 @@
 
 const Constants = require('../constants'),
   HOST = Constants.HOST,
+  ACCOUNT_ROLE = Constants.ACCOUNT_ROLE,
   ACCOUNT_STATUS = Constants.ACCOUNT_STATUS,
   STATUS_MESSAGES = Constants.ACCOUNT_STATUS_MESSAGES
 
@@ -346,6 +347,28 @@ const Handlers = {
       } catch(e) {
 
         console.log('ERROR:', e)
+
+        Bounce.rethrow(e, 'system')
+
+      }
+
+    },
+    Role: async (request, h) => {
+
+      console.log('EXECUTE ROLE HANDLER')
+
+      try {
+
+        let payload = request.payload
+
+        console.log('payload', payload)
+
+        await QueryHandler('../apis/mysql/queries/update/account_role.sql', [payload.scope, payload.id])
+
+        return h.response({ status: 200, data: { status: ACCOUNT_ROLE.MODIFIED }, message: { userId: payload.id} })
+
+
+      } catch(e) {
 
         Bounce.rethrow(e, 'system')
 

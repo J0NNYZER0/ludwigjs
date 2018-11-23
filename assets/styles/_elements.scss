@@ -69,11 +69,25 @@ select, textarea {
 	text-overflow: clip;
 }
 
+
+/*
+============================================================
+LOAD MORE BUTTON
+============================================================
+*/
+
 .load-more {
   cursor: pointer;
   font-family: $font-title;
   text-align: center;
 }
+
+
+/*
+============================================================
+CHARACTER COUNTER
+============================================================
+*/
 
 .character-counter {
   font-family: $font-med;
@@ -81,4 +95,111 @@ select, textarea {
 
 .character-counter.red {
   color: $red;
+}
+
+/*
+============================================================
+MULTISELECT MENU
+============================================================
+*/
+
+.multi-select-input > .ddm-btn,
+.multi-select-input > .ddm-btn.minus {
+  width: 102px;
+  user-select: none;
+  padding: 0;
+}
+
+.multi-select-input > .ddm-btn.plus::after,
+.multi-select-input > .ddm-btn.minus::after {
+  right: 5;
+}
+
+.multi-select-input > .menu {
+  position: absolute;
+  background-color: #F5F5F5;
+  z-index: 1;
+  border: 1px solid #DDD;
+  padding: 15px;
+}
+
+.checkbox-input {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-input input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  //background-color: #eee;
+  left: 3px;
+  top: 6px;
+  width: 9px;
+  height: 16px;
+  border: solid #DDD;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-input:hover input ~ .checkmark {
+  left: 3px;
+  top: 6px;
+  width: 9px;
+  height: 16px;
+  border: solid #999;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-input input:checked ~ .checkmark {
+  //background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-input input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-input .checkmark:after {
+  left: 0;
+  top: 0;
+  width: 9px;
+  height: 16px;
+  border: solid #000;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }

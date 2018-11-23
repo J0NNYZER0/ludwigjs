@@ -11,6 +11,9 @@ const Constants = {
     SESSION_TIMEOUT: `SESSION_TIMEOUT`,   //    true     |    true       |    false      |    false
     UNCONFIRMED: `UNCONFIRMED`            //    false    |    false      |    false      |    true
   },
+  ACCOUNT_ROLE: {
+    MODIFIED: 'ACCOUNT_ROLE_MODIFIED'
+  },
   ACCOUNT_STATUS_MESSAGES: {
     DISABLED: `Account is disabled.`,
     LOGGED_IN: `Account is logged in.`,
