@@ -1,0 +1,19 @@
+version: '3'
+services:
+  ludwig:
+    build: .
+    ports:
+     - "3000:3000"
+    environment:
+    - CLEARDB_DATABASE_URL=root:password123@localhost:3306/ludwig
+    - MYSQL_DATABASE=ludwig
+    depends_on:
+    - db
+  db:
+    image: "mysql:5.7"
+    env_file: config/local.env
+    environment:
+    - MYSQL_ROOT_PASSWORD=password123
+    - MYSQL_DATABASE=ludwig
+    ports:
+    - "3306:3306"
