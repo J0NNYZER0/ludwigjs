@@ -1,6 +1,7 @@
 'use strict'
 
-const Mysql = require('mysql'),
+const Bounce = require('bounce'),
+  Mysql = require('mysql'),
   MysqlPool = require('../index').MysqlPool,
   ReadSqlFile = require('../../../utilities').ReadFileAsync,
   FormatSql = (sql, values) => {
@@ -31,17 +32,35 @@ module.exports = {
 
       const sql = values !== undefined ? FormatSql(ReadSqlFile(pathToSqlFile), values) : ReadSqlFile(pathToSqlFile).toString()
 
-      return connection.query(sql, (error, results) => {
+      try {
+        if (!connection) {
 
-        // When done with the connection, release it.
-        connection.release()
+          throw new Error('Connection string is not available')
 
-        // Handle error after the release.
-        if (error) reject(error)
+        } else {
 
-        resolve(results)
+          return connection.query(sql, (error, results) => {
 
-        // Don't use the connection here, it has been returned to the pool.
-      })
+            // When done with the connection, release it.
+            connection.release()
+
+            // Handle error after the release.
+            if (error) reject(error)
+
+            resolve(results)
+
+            // Don't use the connection here, it has been returned to the pool.
+        })
+
+        }
+
+      } catch(e) {
+
+        console.log('ERROR:', e)
+
+        Bounce.rethrow(e, 'system')
+
+      }
+
     }))
 }
