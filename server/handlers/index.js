@@ -9,7 +9,7 @@ const Constants = require('../constants'),
 const Bounce = require('bounce'),
   ShortId = require('shortid'),
   accountStatus = require('../plugins/account-mgr'),
-  QueryHandler = require('../apis/mysql/handlers').QueryHandler,
+  QueryHandler = require('../apis/mysql').QueryHandler,
   Email = require('../email').Email,
   Data = {
     Products: require('../../assets/products.json'),
