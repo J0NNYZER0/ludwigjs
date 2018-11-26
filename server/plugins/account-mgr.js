@@ -4,7 +4,7 @@ const Constants = require('../constants'),
   ACCOUNT_STATUS = Constants.ACCOUNT_STATUS,
   STATUS_MESSAGES = Constants.ACCOUNT_STATUS_MESSAGES
 
-const QueryHandler = require('../apis/mysql/handlers').QueryHandler,
+const QueryHandler = require('../apis/mysql').QueryHandler,
   getAccountByEmail = async (email) => {
 
     const account = await QueryHandler('../apis/mysql/queries/select/account_by_email.sql', [email])
