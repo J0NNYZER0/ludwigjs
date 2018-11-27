@@ -17,10 +17,7 @@
     "sass-local": "node-sass --watch assets/styles -o assets/styles",
     "build-local": "npm run babel-local && npm run webpack-local && npm run sass-local",
     "build": "npm run webpack && npm run babel",
-    "migrate-local": "sequelize --options-path=database/local/options.js",
-    "migrate-dev": "sequelize --options-path=database/dev/options.js",
-    "migrate-prod": "sequelize --options-path=database/prod/options.js",
-    "migrate-all": "npm run migrate-local init && npm run migrate-dev init && npm run migrate-prod init"
+    "migrate": "sequelize init --options-path=database/options.js"
   },
   "dependencies": {
     "@ludwigjs/ui": "0.0.24",

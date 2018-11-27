@@ -1,22 +1,22 @@
 {
-  "local": {
+  "development": {
     "username": "root",
-    "password": "password123",
-    "database": "ludwig_local",
+    "password": null,
+    "database": "database_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "development": {
+  "test": {
     "username": "root",
-    "password": "password123",
-    "database": "ludwig_dev",
+    "password": null,
+    "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "password123",
-    "database": "ludwig",
+    "password": null,
+    "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
