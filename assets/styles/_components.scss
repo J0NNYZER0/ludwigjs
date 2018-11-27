@@ -1,3 +1,39 @@
+/*
+============================================================
+SIDEBAR
+============================================================
+*/
+
+.sidebar nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.sidebar > ul {
+  display: inline-block;
+  width: auto;
+}
+
+.sidebar > ul li {
+  float: left;
+  list-style-type: none;
+}
+
+.sidebar nav > ul {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.sidebar nav > ul li {
+  float: none;
+}
+
+.sidebar nav > ul li:last-child {
+  padding-right: $pad-mrg-md;
+}
+
 
 
 /*
@@ -55,7 +91,7 @@ nav > ul li {
 
 main {
   width: 100%;
-  max-width: 980px;
+  max-width: 1260px;
   margin: 0 auto;
   padding: 0;
   flex: 1;
@@ -362,6 +398,8 @@ SLIDESHOW
 */
 
 .slideshow {
+  max-width: 980px;
+  margin: 0 auto;
   position: relative;
   z-index: 0;
 }
@@ -403,8 +441,7 @@ SLIDESHOW PROGRESS BAR
 */
 
 ul.progress-bar {
-  max-width: none;
-  margin: 0 20px;
+  margin: 0 auto;
   display: flex;
   position: relative;
   top: -34px;
@@ -477,6 +514,8 @@ HERO BANNER
 */
 
 .hero {
+  max-width: 980px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -695,10 +734,6 @@ MEDIA QUERY - 768px
     padding-right: $pad-mrg-md;
   }
 
-  nav > ul > li.dd {
-    padding: 0;
-  }
-
   /*
   ============================================================
   DROPDOWN MENU
@@ -707,6 +742,7 @@ MEDIA QUERY - 768px
 
   nav > ul > li.dd {
     margin-right: 0px;;
+    padding: 0;
   }
 
   .ddm-btn {

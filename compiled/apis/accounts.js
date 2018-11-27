@@ -1,1 +1,47 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.Api=void 0;var _isomorphicFetch=_interopRequireDefault(require("isomorphic-fetch")),_index=require("../constants/index");function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _defineProperties(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,"value"in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}function _createClass(a,b,c){return b&&_defineProperties(a.prototype,b),c&&_defineProperties(a,c),a}var Api=/*#__PURE__*/function(){function a(){_classCallCheck(this,a)}return _createClass(a,null,[{key:"get",value:function a(){return new Promise(function(a,b){var c=encodeURI("".concat(_index.Constants.URI.API.ACCOUNTS));(0,_isomorphicFetch.default)(c,{credentials:"include",method:"GET"}).then(function(b){return a(b.json())}).catch(function(a){return b(a)})})}}]),a}();exports.Api=Api;
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Api = void 0;
+
+var _isomorphicFetch = _interopRequireDefault(require("isomorphic-fetch"));
+
+var _index = require("../constants/index");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Api =
+/*#__PURE__*/
+function () {
+  function Api() {
+    _classCallCheck(this, Api);
+  }
+
+  _createClass(Api, null, [{
+    key: "get",
+    value: function get(data) {
+      return new Promise(function (resolve, reject) {
+        var encodedURI = encodeURI("".concat(_index.Constants.URI.API.ACCOUNTS));
+        (0, _isomorphicFetch.default)(encodedURI, {
+          credentials: 'include',
+          method: 'GET'
+        }).then(function (response) {
+          return resolve(response.json());
+        }).catch(function (err) {
+          return reject(err);
+        });
+      });
+    }
+  }]);
+
+  return Api;
+}();
+
+exports.Api = Api;

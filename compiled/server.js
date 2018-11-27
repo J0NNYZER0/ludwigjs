@@ -1,1 +1,34 @@
-"use strict";var _react=_interopRequireDefault(require("react")),_server=require("react-dom/server"),_reactRouterDom=require("react-router-dom"),_reactRedux=require("react-redux"),_reactCookie=require("react-cookie"),_configureStore=_interopRequireDefault(require("./store/configureStore")),_Index=_interopRequireDefault(require("./components/app/Index"));function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}module.exports=function(a,b,c){var d=(0,_configureStore.default)(b),e=(0,_server.renderToString)(_react.default.createElement(_reactRedux.Provider,{store:d},_react.default.createElement(_reactRouterDom.StaticRouter,{location:a,context:d},_react.default.createElement(_reactCookie.CookiesProvider,{cookies:c},_react.default.createElement(_Index.default,null))))),f=d.getState();return{content:e,preloadedState:f}};
+"use strict";
+
+var _react = _interopRequireDefault(require("react"));
+
+var _server = require("react-dom/server");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _reactRedux = require("react-redux");
+
+var _reactCookie = require("react-cookie");
+
+var _configureStore = _interopRequireDefault(require("./store/configureStore"));
+
+var _Index = _interopRequireDefault(require("./components/app/Index"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function render(path, initialState, cookies) {
+  var store = (0, _configureStore.default)(initialState);
+  var content = (0, _server.renderToString)(_react.default.createElement(_reactRedux.Provider, {
+    store: store
+  }, _react.default.createElement(_reactRouterDom.StaticRouter, {
+    location: path,
+    context: store
+  }, _react.default.createElement(_reactCookie.CookiesProvider, {
+    cookies: cookies
+  }, _react.default.createElement(_Index.default, null)))));
+  var preloadedState = store.getState();
+  return {
+    content: content,
+    preloadedState: preloadedState
+  };
+};
