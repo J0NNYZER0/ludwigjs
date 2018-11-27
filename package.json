@@ -16,7 +16,11 @@
     "babel": "babel src -d compiled --presets minify",
     "sass-local": "node-sass --watch assets/styles -o assets/styles",
     "build-local": "npm run babel-local && npm run webpack-local && npm run sass-local",
-    "build": "npm run webpack && npm run babel"
+    "build": "npm run webpack && npm run babel",
+    "migrate-local": "sequelize --options-path=database/local/options.js",
+    "migrate-dev": "sequelize --options-path=database/dev/options.js",
+    "migrate-prod": "sequelize --options-path=database/prod/options.js",
+    "migrate-all": "npm run migrate-local init && npm run migrate-dev init && npm run migrate-prod init"
   },
   "dependencies": {
     "@ludwigjs/ui": "0.0.24",
@@ -65,6 +69,8 @@
     "nodemon": "^1.18.4",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "sass-loader": "^7.1.0",
+    "sequelize": "^4.41.2",
+    "sequelize-cli": "^5.3.0",
     "svg-url-loader": "^2.3.2",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.26.0",
