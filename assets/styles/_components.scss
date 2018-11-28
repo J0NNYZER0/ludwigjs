@@ -45,6 +45,14 @@ PANELS
   content: '- '
 }
 
+.sidebar > nav > ul:nth-child(2) > li > ul {
+  display: none;
+}
+
+.sidebar > nav > ul:nth-child(2) > li.show > ul {
+  display: block;
+}
+
 /*
 ============================================================
 SIDEBAR

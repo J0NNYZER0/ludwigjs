@@ -11,11 +11,21 @@ class Docs extends Component {
       show: false
     }
 
+    this.handleSectionClick = this.handleSectionClick.bind(this)
+
+  }
+
+  handleSectionClick() {
+
+    const { show } = this.state
+
+    this.setState({ show: !show })
+
   }
 
 
-
   render() {
+    const { show } = this.state
 
     return (
       <div className='docs-page'>
@@ -29,8 +39,8 @@ class Docs extends Component {
                   </li>
                 </ul>
                 <ul>
-                  <li className='show'>
-                    <span>Getting Started</span>
+                  <li className={show !== false ? 'show' : ''}>
+                    <span onClick={this.handleSectionClick}>Getting Started</span>
                     <ul>
                       <li>
                         About
