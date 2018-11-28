@@ -1,5 +1,52 @@
 /*
 ============================================================
+PANELS
+============================================================
+*/
+
+.panels {
+  display: flex;
+  min-height: $min-height;
+}
+
+.panels.col-2 {
+
+}
+
+.panels.col-2 > .panel:first-child {
+  display: flex;
+  width: 250px;
+}
+
+.panels.col-2 > .panel > .sidebar {
+  width: 100%;
+  border-right: 1px solid #E0E0E0;
+}
+
+.sidebar > nav > ul,
+.sidebar > nav > ul > li > ul {
+  font-family: 'NeutrafaceDisplayLight';
+}
+
+.sidebar > nav > ul > li > ul {
+  margin: 0px 20px;
+}
+
+.sidebar > nav > ul > li {
+  text-align: left;
+  margin: 10px;
+}
+
+.sidebar > nav > ul:nth-child(2) > li > span::before {
+  content: '+ '
+}
+
+.sidebar > nav > ul:nth-child(2) > li.show > span::before {
+  content: '- '
+}
+
+/*
+============================================================
 SIDEBAR
 ============================================================
 */
@@ -31,7 +78,7 @@ SIDEBAR
 }
 
 .sidebar nav > ul li:last-child {
-  padding-right: $pad-mrg-md;
+  //padding-right: $pad-mrg-md;
 }
 
 
@@ -44,11 +91,13 @@ HEADER AND FOOTER
 
 header,
 footer {
+  height: $hdr-ftr-height;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: auto;
+  position: relative;
+  z-index: 1;
   padding: $pad-mrg-md-lg;
+  justify-content: center;
   line-height: .85em;
   background-color: $lime;
   user-select: none;
@@ -531,6 +580,7 @@ HERO BANNER
 .banner {
   height: 300px;
   width: 100%;
+  background-position: center;
 }
 
 .banner.lg {
@@ -619,7 +669,7 @@ ul.ddm {
   position: absolute;
   z-index: 2;
   margin-left: -100px;
-  margin-top: 52px;
+  margin-top: 42px;
   padding: 0;
   list-style-type: none;
   background-color: $lime;
@@ -663,6 +713,23 @@ footer > nav > ul > li.dd {
   display: none;
 }
 
+
+/*
+============================================================
+PAGES
+============================================================
+*/
+
+.docs-page {
+    h1:not(.main-title),
+    h2 {
+      text-align: left;
+    }
+    p {
+      text-align: left;
+    }
+}
+
 /*
 ============================================================
 MEDIA QUERY - 768px
@@ -693,7 +760,7 @@ MEDIA QUERY - 768px
 
   header > div.h-right {
     display: none;
-    width: 100%;
+    width: calc(100% + 40px);
     border-top: 1px solid $black;
   }
 
