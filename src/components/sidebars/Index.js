@@ -65,15 +65,16 @@ class Sidebar extends Component {
 
   render() {
 
-    const { show, toggle } = this.state
-    const scrollWithOffset = (el, offset) => {
-      const elementPosition = el.offsetTop - offset;
-      window.scroll({
-        top: elementPosition,
-        left: 0,
-        behavior: "smooth"
-      })
-    }
+    const { show, toggle } = this.state,
+      scrollWithOffset = (el, offset) => {
+        const elementPosition = el.offsetTop - offset;
+        window.scroll({
+          top: elementPosition,
+          left: 0,
+          behavior: "smooth"
+        })
+      },
+      offSet = 70
 
     return (
       <div className={toggle === false ? 'sidebar' : 'sidebar stuck'} ref={this.sidebarRef}>
@@ -84,10 +85,10 @@ class Sidebar extends Component {
               <span onClick={this.handleSectionClick}>Getting Started</span>
               <ul>
                 <li>
-                  <HashLink to='/docs#about' scroll={el => scrollWithOffset(el, 120)}>About</HashLink>
+                  <HashLink to='/docs#about' scroll={el => scrollWithOffset(el, offSet)}>About</HashLink>
                 </li>
                 <li>
-                  <HashLink to='/docs#requirements' scroll={el => scrollWithOffset(el, 120)}>Requirements</HashLink>
+                  <HashLink to='/docs#requirements' scroll={el => scrollWithOffset(el, offSet)}>Requirements</HashLink>
                 </li>
                 <li>
                   Installation
@@ -138,6 +139,7 @@ class Sidebar extends Component {
             </li>
           </ul>
         </nav>
+        <HashLink to='/docs#top' className='gototop' smooth><span>Go To Top</span></HashLink>
       </div>
     )
   }

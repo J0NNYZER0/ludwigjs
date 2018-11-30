@@ -83,6 +83,17 @@ SIDEBAR
   z-index: 2;
 }
 
+.sidebar.stuck.closed > nav,
+.sidebar > nav > ul > li > ul {
+  display: none;
+}
+
+/*
+============================================================
+SIDEBAR TOGGLE / BACK TO TOP BUTTON
+============================================================
+*/
+
 .sidebar > .toggle,
 .sidebar.stuck > .toggle {
   padding: 10px;
@@ -93,11 +104,6 @@ SIDEBAR
 
 .sidebar > .toggle {
   position: relative;
-}
-
-.sidebar.stuck.closed > nav,
-.sidebar > nav > ul > li > ul {
-  display: none;
 }
 
 .sidebar.closed > .toggle,
@@ -112,7 +118,7 @@ SIDEBAR
 .sidebar > .toggle > span,
 .sidebar.stuck > .toggle > span {
   background: transparent;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 }
 
 .sidebar.stuck > .toggle {
@@ -120,6 +126,7 @@ SIDEBAR
   top: 0;
 }
 
+//.sidebar > .gototop,
 .sidebar.closed > .toggle > span,
 .sidebar.stuck.closed > .toggle > span {
   display: block;
@@ -128,8 +135,7 @@ SIDEBAR
   padding: 15px;
   background: #E0E0E0;
   border-radius: 6px;
-  transition: all 0.5s ease;
-
+  transition: all 0.25s ease;
 }
 
 .sidebar.stuck.closed > .toggle > span::before {
@@ -141,6 +147,13 @@ SIDEBAR
   top: 50px;
   z-index: 2;
   display: block;
+}
+
+.gototop {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  font-family: 'NeutrafaceDisplayLight';
 }
 
 /*
@@ -918,6 +931,7 @@ MEDIA QUERY - 768px
   .hero {
     display: flex;
     flex-direction: column;
+    padding: 0;
   }
 
   .h-top,
@@ -992,5 +1006,92 @@ MEDIA QUERY - 768px
   .tbl:last-child .multi-select-input > .menu {
     margin-top: -200px;
   }
+
+
+  /*
+  ============================================================
+  PANELS
+  ============================================================
+  */
+
+  .panels.col-2 {
+    flex-direction: column;
+  }
+
+  .panels.col-2 > .panel:first-child {
+    width: 100%;
+  }
+
+  /*
+  ============================================================
+  SIDEBAR
+  ============================================================
+  */
+
+  .sidebar:not(.stuck) > .toggle {
+    padding: 25px;
+  }
+
+  .sidebar.stuck.closed {
+    position: fixed;
+    top: 0;
+    background: #FFF;
+    z-index: 4;
+    padding: 0;
+  }
+
+  .panels.col-2 > .panel > .sidebar {
+    border-bottom: 1px solid #E0E0E0;
+    padding-top: 0;
+    z-index: 4;
+  }
+
+  .sidebar > .toggle, .sidebar.stuck  > .toggle {
+    margin-top: 0;
+    width: 100%;
+    background: #FFF;
+  }
+
+  .sidebar.stuck:not(.closed) > .toggle {
+    padding: 20px;
+  }
+
+  .sidebar > .toggle > span, .sidebar.stuck > .toggle > span {
+    margin-left: 40px;
+  }
+
+  .sidebar > nav,
+  .sidebar.stuck > nav {
+    width: 100%;
+    background: #FFF;
+    margin-top: -5px;
+  }
+
+  /*
+  ============================================================
+  STICKY HEADER
+  ============================================================
+  */
+
+  .sticky-header > h1,
+  .sticky-header.stuck > h1 {
+    padding: 15px 20px;
+  }
+
+
+    .sticky-header > h1,
+    .sticky-header.stuck > h1,
+    .sticky-header + section,
+    .sticky-header.stuck + section  {
+      top: 98px;
+    }
+
+    .sticky-header + section,
+    .sticky-header.stuck + section  {
+      margin-top: 98px;
+    }
+    .sticky-header.stuck + section  {
+      padding-top: 88px;
+    }
 
 }
