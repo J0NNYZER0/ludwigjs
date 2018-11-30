@@ -9,22 +9,25 @@ PANELS
   min-height: $min-height;
 }
 
-.panels.col-2 {
-
-}
-
 .panels.col-2 > .panel:first-child {
   display: flex;
-  width: 250px;
+  width: $l-panel;
 }
 
+/*
+============================================================
+SIDEBAR
+============================================================
+*/
 .panels.col-2 > .panel > .sidebar {
   width: 100%;
+  min-width: 195px;
   border-right: 1px solid #E0E0E0;
 }
 
 .sidebar > nav > ul,
-.sidebar > nav > ul > li > ul {
+.sidebar > nav > ul > li > ul,
+.sidebar > .toggle {
   font-family: 'NeutrafaceDisplayLight';
 }
 
@@ -34,33 +37,32 @@ PANELS
 
 .sidebar > nav > ul > li {
   text-align: left;
-  margin: 10px;
+  margin: 5px 20px;
+  user-select: none;
+  cursor: pointer;
 }
 
-.sidebar > nav > ul:nth-child(2) > li > span::before {
+.sidebar > nav > ul li {
+  float: none;
+}
+
+.sidebar > nav > ul > li > span::before {
   content: '+ '
 }
 
-.sidebar > nav > ul:nth-child(2) > li.show > span::before {
+.sidebar > nav > ul > li.show > span {
+  font-weight: 600;
+}
+
+.sidebar > nav > ul > li.show > span::before {
   content: '- '
 }
 
-.sidebar > nav > ul:nth-child(2) > li > ul {
-  display: none;
-}
-
-.sidebar > nav > ul:nth-child(2) > li.show > ul {
+.sidebar > nav > ul > li.show > ul {
   display: block;
 }
 
-/*
-============================================================
-SIDEBAR
-============================================================
-*/
-
 .sidebar nav {
-  padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
 }
@@ -81,30 +83,64 @@ SIDEBAR
   z-index: 2;
 }
 
-.sidebar nav > ul li {
-  float: none;
+.sidebar > .toggle,
+.sidebar.stuck > .toggle {
+  position: fixed;
+  display: block;
+  top: 0;
+  margin: 15px 15px 0 15px;
+  padding: 10px;
+  background: transparent;
+  min-width: 165px;
+  max-width: 220px;
+  font-size: 1.25rem;
+  line-height: .85em;
+  border-radius: 6px;
+  transition: all 0.5s ease;
 }
 
-.sidebar nav > ul li:last-child {
-  //padding-right: $pad-mrg-md;
+.sidebar > .toggle {
+  position: relative;
 }
 
+.sidebar.stuck.closed > nav,
+.sidebar > nav > ul > li > ul {
+  display: none;
+}
 
+.sidebar.stuck.closed > .toggle::before {
+  content: '+ '
+}
+
+.sidebar.closed > .toggle,
+.sidebar.stuck.closed > .toggle {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background: #E0E0E0;
+}
+
+.sidebar.stuck > nav {
+  position: fixed;
+  top: 50px;
+  z-index: 2;
+  display: block;
+}
 
 /*
 ============================================================
-HEADER AND FOOTER
+HEADER, MAIN & FOOTER
 ============================================================
 */
 
 header,
 footer {
-  height: $hdr-ftr-height;
   display: flex;
   align-items: center;
   position: relative;
   z-index: 2;
-  padding: $pad-mrg-md-lg;
+  padding: 8px 20px;
+  //padding: $pad-mrg-md-lg;
   justify-content: center;
   line-height: .85em;
   background-color: $lime;
@@ -148,7 +184,7 @@ nav > ul li {
 
 main {
   width: 100%;
-  max-width: 1260px;
+  max-width: $max-main-w;
   margin: 0 auto;
   padding: 0;
   flex: 1;
@@ -179,13 +215,6 @@ footer .company-name {
   font-size: $fs-xs;
   padding-right: $pad-mrg-sm;
 }
-
-/*
-============================================================
-BUTTONS
-============================================================
-*/
-
 
 /*
 ============================================================
@@ -729,13 +758,13 @@ PAGES
 */
 
 .docs-page {
-    h1:not(.main-title),
-    h2 {
-      text-align: left;
-    }
-    p {
-      text-align: left;
-    }
+  h1:not(.main-title),
+  h2 {
+    text-align: left;
+  }
+  p {
+    text-align: left;
+  }
 }
 
 /*
@@ -755,15 +784,20 @@ MEDIA QUERY - 768px
   header {
     height: auto;
     flex-direction: column;
-    padding-bottom: $pad-mrg-no;
+    padding: 8px 20px;
+    //padding-bottom: $pad-mrg-no;
   }
 
   header > div.h-left {
     display: flex;
     width: 100%;
-    padding-bottom: $pad-mrg-md-lg;
+    padding-bottom: 0;
     align-items: center;
     justify-content: center;
+  }
+
+  header.show > div.h-left {
+    padding-bottom: 8px;
   }
 
   header > div.h-right {
@@ -772,7 +806,7 @@ MEDIA QUERY - 768px
     border-top: 1px solid $black;
   }
 
-  header > div.h-right.show {
+  header.show > div.h-right {
     display: block;
   }
 
@@ -790,8 +824,8 @@ MEDIA QUERY - 768px
   }
 
   header nav {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
   }
 

@@ -71,6 +71,10 @@ $brd-sz-xl: 6px;
 $brd-sz: 1px;
 
 // Heights
-
 $hdr-ftr-height: 70px;
 $min-height: calc(100vh - (#{$hdr-ftr-height} * 2));
+
+// Widths
+$max-main-w: 1260px;
+$l-panel: 250px;
+$r-panel: calc(#{$max-main-w - $l-panel - 50px});
