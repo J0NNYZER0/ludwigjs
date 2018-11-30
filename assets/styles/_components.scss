@@ -20,9 +20,9 @@ SIDEBAR
 ============================================================
 */
 .panels.col-2 > .panel > .sidebar {
-  width: 100%;
-  min-width: 195px;
+  width: inherit;
   border-right: 1px solid #E0E0E0;
+  padding-top: 15px;
 }
 
 .sidebar > nav > ul,
@@ -85,18 +85,10 @@ SIDEBAR
 
 .sidebar > .toggle,
 .sidebar.stuck > .toggle {
-  position: fixed;
-  display: block;
-  top: 0;
-  margin: 15px 15px 0 15px;
   padding: 10px;
-  background: transparent;
-  min-width: 165px;
-  max-width: 220px;
+  margin-top: 15px;
   font-size: 1.25rem;
   line-height: .85em;
-  border-radius: 6px;
-  transition: all 0.5s ease;
 }
 
 .sidebar > .toggle {
@@ -108,16 +100,40 @@ SIDEBAR
   display: none;
 }
 
-.sidebar.stuck.closed > .toggle::before {
-  content: '+ '
-}
-
 .sidebar.closed > .toggle,
 .sidebar.stuck.closed > .toggle {
-  position: fixed;
+  width: inherit;
+  position: sticky;
   top: 0;
   z-index: 2;
+}
+
+
+.sidebar > .toggle > span,
+.sidebar.stuck > .toggle > span {
+  background: transparent;
+  transition: all 0.5s ease;
+}
+
+.sidebar.stuck > .toggle {
+  position: fixed;
+  top: 0;
+}
+
+.sidebar.closed > .toggle > span,
+.sidebar.stuck.closed > .toggle > span {
+  display: block;
+  width: calc(100% - 30px);
+  margin: 15px;
+  padding: 15px;
   background: #E0E0E0;
+  border-radius: 6px;
+  transition: all 0.5s ease;
+
+}
+
+.sidebar.stuck.closed > .toggle > span::before {
+  content: '+ '
 }
 
 .sidebar.stuck > nav {

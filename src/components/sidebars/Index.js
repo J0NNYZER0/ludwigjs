@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { HashLink } from 'react-router-hash-link'
 
 class Sidebar extends Component {
 
@@ -65,20 +66,28 @@ class Sidebar extends Component {
   render() {
 
     const { show, toggle } = this.state
+    const scrollWithOffset = (el, offset) => {
+      const elementPosition = el.offsetTop - offset;
+      window.scroll({
+        top: elementPosition,
+        left: 0,
+        behavior: "smooth"
+      })
+    }
 
     return (
       <div className={toggle === false ? 'sidebar' : 'sidebar stuck'} ref={this.sidebarRef}>
-        <div className='toggle' onClick={this.handleToggle}>Ludwig v1.0.0</div>
+        <div className='toggle' onClick={this.handleToggle}><span>Ludwig v1.0.0</span></div>
         <nav>
           <ul>
             <li className={show !== false ? 'show' : ''}>
               <span onClick={this.handleSectionClick}>Getting Started</span>
               <ul>
                 <li>
-                  About
+                  <HashLink to='/docs#about' scroll={el => scrollWithOffset(el, 120)}>About</HashLink>
                 </li>
                 <li>
-                  Requirements
+                  <HashLink to='/docs#requirements' scroll={el => scrollWithOffset(el, 120)}>Requirements</HashLink>
                 </li>
                 <li>
                   Installation
