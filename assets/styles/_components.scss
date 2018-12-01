@@ -1029,7 +1029,7 @@ MEDIA QUERY - 768px
   */
 
   .sidebar:not(.stuck) > .toggle {
-    padding: 25px;
+    padding: 25px 25px 10px;
   }
 
   .sidebar.stuck.closed {
@@ -1050,14 +1050,15 @@ MEDIA QUERY - 768px
     margin-top: 0;
     width: 100%;
     background: #FFF;
+    text-align: center;
   }
 
   .sidebar.stuck:not(.closed) > .toggle {
     padding: 20px;
   }
 
-  .sidebar > .toggle > span, .sidebar.stuck > .toggle > span {
-    margin-left: 40px;
+  .sidebar > nav > ul > li {
+    text-align: center;
   }
 
   .sidebar > nav,
@@ -1079,19 +1080,19 @@ MEDIA QUERY - 768px
   }
 
 
-    .sticky-header > h1,
-    .sticky-header.stuck > h1,
-    .sticky-header + section,
-    .sticky-header.stuck + section  {
-      top: 98px;
-    }
+  .sticky-header > h1,
+  .sticky-header.stuck > h1,
+  .sticky-header + section,
+  .sticky-header.stuck + section  {
+    top: 98px;
+  }
 
-    .sticky-header + section,
-    .sticky-header.stuck + section  {
-      margin-top: 98px;
-    }
-    .sticky-header.stuck + section  {
-      padding-top: 88px;
-    }
+  .sticky-header + section,
+  .sticky-header.stuck + section  {
+    margin-top: 98px;
+  }
+  .sticky-header.stuck + section  {
+    padding-top: 88px;
+  }
 
 }
