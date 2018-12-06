@@ -31,6 +31,7 @@ Object.keys(db).forEach(modelName => {
   }
 })
 
+db.config = config
 db.sequelize = sequelize
 db.Sequelize = Sequelize
 
