@@ -1,5 +1,5 @@
 'use strict'
-
+const DataTypes = require('sequelize/lib/data-types');
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('account', {
@@ -46,7 +46,7 @@ module.exports = {
   		created: {
   			type: DataTypes.DATE,
   			allowNull: true,
-  			defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+  			defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
   		}
   	}, {
   		tableName: 'account'

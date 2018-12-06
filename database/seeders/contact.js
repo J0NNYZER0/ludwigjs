@@ -6,7 +6,7 @@ module.exports = {
     return queryInterface.bulkInsert('contact', [{
         email: 'jon.ortiz@me.com',
         subject: 'Jon',
-        contact_type: 'Jonny',
+        contact_type: '1',
         message: 'Hello',
         created:'2018-11-13 04:06:32'
       }], {})

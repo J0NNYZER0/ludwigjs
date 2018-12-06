@@ -18,7 +18,9 @@
     "build-local": "npm run babel-local && npm run webpack-local && npm run sass-local",
     "build": "npm run webpack && npm run babel",
     "migration:init": "sequelize init --options-path=database/options.js",
-    "models:build": "./scripts/init-models.sh"
+    "db:migrate": "sequelize db:migrate --options-path=database/options.js",
+    "models:build": "./scripts/init-models.sh",
+    "db:build": "./scripts/init-db.sh"
   },
   "dependencies": {
     "@ludwigjs/ui": "0.0.27",
@@ -35,6 +37,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
     "react": "^16.6.3",
     "react-cookie": "^3.0.7",
     "react-dom": "^16.6.3",

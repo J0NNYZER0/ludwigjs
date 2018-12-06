@@ -1,6 +1,8 @@
 /* jshint indent: 1 */
 'use strict'
 
+const DataTypes = require('sequelize/lib/data-types');
+
 module.exports = (sequelize, DataTypes) => {
 
 	const contact = sequelize.define('contact', {

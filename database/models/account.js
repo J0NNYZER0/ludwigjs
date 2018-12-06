@@ -1,6 +1,8 @@
 /* jshint indent: 1 */
 'use strict'
 
+const DataTypes = require('sequelize/lib/data-types');
+
 module.exports = (sequelize, DataTypes) => {
 
 	const account = sequelize.define('account', {
@@ -56,6 +58,5 @@ module.exports = (sequelize, DataTypes) => {
 	account.associate = models => {
     // associations can be defined here
   }
-
 	return account
 }

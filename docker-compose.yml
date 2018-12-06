@@ -9,6 +9,7 @@ services:
     - MYSQL_DATABASE=ludwig
     depends_on:
     - db
+    command: "npm run db:build"
   db:
     image: "mysql:5.7"
     env_file: config/local.env
