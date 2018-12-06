@@ -17,10 +17,10 @@
     "sass-local": "node-sass --watch assets/styles -o assets/styles",
     "build-local": "npm run babel-local && npm run webpack-local && npm run sass-local",
     "build": "npm run webpack && npm run babel",
-    "migration:init": "sequelize init --options-path=database/options.js",
-    "db:migrate": "sequelize db:migrate --options-path=database/options.js",
+    "migration:init": "sequelize init --options-path=data/index.js",
     "models:build": "./scripts/init-models.sh",
-    "db:build": "./scripts/init-db.sh"
+    "db:build": "./scripts/init-db.sh",
+    "db:migrate": "sequelize db:migrate --options-path=data/index.js"
   },
   "dependencies": {
     "@ludwigjs/ui": "0.0.27",

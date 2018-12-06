@@ -10,9 +10,10 @@ const fs = require('fs'),
   db = {}
 
 
-//let sequelize
-//
-const sequelize = new Sequelize(config.database, config.username, config.password, config)
+const sequelize = (config.use_env_variable) ? 
+new Sequelize(process.env[config.use_env_variable], config) :
+new Sequelize(config.database, config.username, config.password, config) ;
+
 
 fs
   .readdirSync(__dirname)
