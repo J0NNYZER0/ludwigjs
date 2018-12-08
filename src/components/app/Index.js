@@ -7,7 +7,7 @@ import { Layout, Notification } from '@ludwigjs/ui'
 import * as accountActions from '../../actions/account'
 import * as accountsActions from '../../actions/accounts'
 import * as contactActions from '../../actions/contact'
-import * as productsActions from '../../actions/products'
+import * as contentActions from '../../actions/content'
 import * as uiActions from '../../actions/ui'
 import Main from '../Main'
 
@@ -48,7 +48,7 @@ const mapStateToProps = state => ({
   account: state.account,
   accounts: state.accounts,
   messages: state.messages,
-  products: state.products,
+  content: state.content,
   ui: state.ui
 }),
 mapDispatchToProps = dispatch => ({
@@ -56,7 +56,7 @@ mapDispatchToProps = dispatch => ({
     account: bindActionCreators(accountActions, dispatch),
     accounts: bindActionCreators(accountsActions, dispatch),
     contact: bindActionCreators(contactActions, dispatch),
-    products: bindActionCreators(productsActions, dispatch),
+    content: bindActionCreators(contentActions, dispatch),
     ui: bindActionCreators(uiActions, dispatch)
   }
 })

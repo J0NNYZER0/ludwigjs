@@ -32,7 +32,7 @@ class Docs extends Component {
             </section>
             <StickyHeader title={`Getting Started`} />
             <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
+              <h2 id='about'>{`About`}</h2>
               <p>
                 {`Some helpful text.`}
               </p>
@@ -43,7 +43,7 @@ class Docs extends Component {
             </section>
             <StickyHeader title={`Workflow`} />
             <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
+              <h2 id='requirements'>{`Requirements`}</h2>
               <p>
                 {`Some helpful text.`}
               </p>
@@ -109,7 +109,7 @@ class Docs extends Component {
             </section>
             <StickyHeader title={`Plugins`} />
             <section>
-              <h2 id='about'>{`About`}</h2>
+              <h2>{`Some Helpful Subcategory`}</h2>
               <p>
                 {`Some helpful text.`}
               </p>
@@ -120,7 +120,7 @@ class Docs extends Component {
             </section>
             <StickyHeader title={`Deployment`} />
             <section>
-              <h2 id="requirements">{`Requirements`}</h2>
+              <h2>{`Some Helpful Subcategory`}</h2>
               <p>
                 {`Some helpful text.`}
               </p>

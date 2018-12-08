@@ -21,11 +21,13 @@ const Constants = {
     LOGIN: {
       SUCCESS: 'LOGIN_SUCCESS'
     },
-    PRODUCTS: {
-      LOAD: 'PRODUCTS_LOAD'
-    },
-    WIDGETS: {
-      LOAD: 'WIDGETS_LOAD'
+    CONTENT: {
+      DOCS: {
+        LOAD: 'DOCS_LOAD'
+      },
+      PRODUCTS: {
+        LOAD: 'PRODUCTS_LOAD'
+      }
     }
   },
   FETCH: {
@@ -48,8 +50,9 @@ const Constants = {
       ROLE: `/api/v1/role`,
       WIDGETS: `/api/v1/widgets`
     },
-    ASSETS: {
-      PRODUCTS: `/assets/products.json`
+    CONTENT: {
+      DOCS: `/content/docs.json`,
+      PRODUCTS: `/content/products.json`
     }
   }
 }

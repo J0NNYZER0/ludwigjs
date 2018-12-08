@@ -13,10 +13,11 @@ class Plan extends Component {
 
   componentDidMount() {
 
-    const { match, products } = this.props,
+    const { match, content } = this.props,
+      { products } = content,
       productId = match.params.id
 
-    products.find(plan => {
+    products.length > 0 && products.find(plan => {
 
       if (plan.id === parseInt(productId)) {
 
@@ -30,12 +31,13 @@ class Plan extends Component {
 
   componentDidUpdate(prevProps, prevState) {
 
-    const { match, products } = this.props,
+    const { match, content } = this.props,
+      { products } = content,
       productId = match.params.id
 
     if (prevProps.match.params.id !== productId) {
 
-      products.find(plan => {
+      products.length > 0 && products.find(plan => {
 
         if (plan.id === parseInt(productId)) {
 
@@ -93,7 +95,8 @@ class Plan extends Component {
             {`No muss or fuss, Ludwig gives developers a rockin' end to end
             boilerplate. If your app needs more fuel check out our packages.`}
           </p>
-          <GridLayouts.GridLayoutA {...this.props} />
+          <GridLayouts.GridLayoutA items={this.props.content.products}
+          callback={this.props.actions.content.getProducts} />
         </section>
         <section>
           <h3>Request A Demo</h3>

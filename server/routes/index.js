@@ -235,15 +235,15 @@ const Static = [
       handler: Handlers.Static.Accounts
     }
   },
-  // /assets/{asset*}
+  // /content/{content*}
   {
     method: 'GET',
-    path: '/assets/{asset*}',
+    path: '/content/{content*}',
     options: {
       auth: false,
       handler: {
         directory: {
-          path: Path.join(__dirname, '../../assets'),
+          path: Path.join(__dirname, '../../content'),
           listing: false
         }
       }
@@ -327,23 +327,6 @@ const Static = [
         { method: PreHandlers.GetCookies, assign: 'cookies' }
       ],
       handler: Handlers.Static.Register
-    }
-  },
-  // /widgets
-  {
-    method:'GET',
-    path:'/widgets',
-    options: {
-      auth: false,
-      cache: {
-        expiresIn: 30 * 1000,
-        privacy: 'public'
-      },
-      pre: [
-        { method: PreHandlers.GetCookies, assign: 'cookies' },
-        { method: PreHandlers.GetAccount, assign: 'account' }
-      ],
-      handler: Handlers.Static.Widgets
     }
   }
 ]

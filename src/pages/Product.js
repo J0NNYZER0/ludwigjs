@@ -418,7 +418,9 @@ class Plan extends Component {
             {`No muss or fuss, Ludwig gives developers a rockin' end to end
             boilerplate. If your app needs more fuel check out our packages.`}
           </p>
-          <GridLayouts.GridLayoutA {...this.props} />
+          <GridLayouts.GridLayoutA
+            items={this.props.content.products}
+            callback={this.props.actions.content.getProducts} />
         </section>
         <section className='gry-brdr bolt-top'>
           <h3>{`WYSIWYG`}</h3>
