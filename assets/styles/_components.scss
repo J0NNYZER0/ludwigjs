@@ -1,8 +1,164 @@
+/*
+============================================================
+PANELS
+============================================================
+*/
 
+.panels {
+  display: flex;
+  min-height: $min-height;
+}
+
+.panels.col-2 > .panel:first-child {
+  display: flex;
+  width: $l-panel;
+}
 
 /*
 ============================================================
-HEADER AND FOOTER
+SIDEBAR
+============================================================
+*/
+.panels.col-2 > .panel > .sidebar {
+  width: inherit;
+  border-right: 1px solid #E0E0E0;
+  padding-top: 15px;
+}
+
+.sidebar > nav > ul,
+.sidebar > nav > ul > li > ul,
+.sidebar > .toggle {
+  font-family: 'NeutrafaceDisplayLight';
+}
+
+.sidebar > nav > ul > li > ul {
+  margin: 0px 20px;
+}
+
+.sidebar > nav > ul > li {
+  text-align: left;
+  margin: 5px 20px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.sidebar > nav > ul li {
+  float: none;
+}
+
+.sidebar > nav > ul > li > span::before {
+  content: '+ '
+}
+
+.sidebar > nav > ul > li.show > span {
+  font-weight: 600;
+}
+
+.sidebar > nav > ul > li.show > span::before {
+  content: '- '
+}
+
+.sidebar > nav > ul > li.show > ul {
+  display: block;
+}
+
+.sidebar nav {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.sidebar > ul {
+  display: inline-block;
+  width: auto;
+}
+
+.sidebar > ul li {
+  float: left;
+  list-style-type: none;
+}
+
+.sidebar nav > ul {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.sidebar.stuck.closed > nav,
+.sidebar > nav > ul > li > ul {
+  display: none;
+}
+
+/*
+============================================================
+SIDEBAR TOGGLE / BACK TO TOP BUTTON
+============================================================
+*/
+
+.sidebar > .toggle,
+.sidebar.stuck > .toggle {
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 1.25rem;
+  line-height: .85em;
+}
+
+.sidebar > .toggle {
+  position: relative;
+}
+
+.sidebar.closed > .toggle,
+.sidebar.stuck.closed > .toggle {
+  width: inherit;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+
+.sidebar > .toggle > span,
+.sidebar.stuck > .toggle > span {
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+.sidebar.stuck > .toggle {
+  position: fixed;
+  top: 0;
+}
+
+//.sidebar > .gototop,
+.sidebar.closed > .toggle > span,
+.sidebar.stuck.closed > .toggle > span {
+  display: block;
+  width: calc(100% - 30px);
+  margin: 15px;
+  padding: 15px;
+  background: #E0E0E0;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.sidebar.stuck.closed > .toggle > span::before {
+  content: '+ '
+}
+
+.sidebar.stuck > nav {
+  position: fixed;
+  top: 50px;
+  z-index: 2;
+  display: block;
+}
+
+.gototop {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  font-family: 'NeutrafaceDisplayLight';
+}
+
+/*
+============================================================
+HEADER, MAIN & FOOTER
 ============================================================
 */
 
@@ -10,9 +166,11 @@ header,
 footer {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 2;
+  padding: 8px 20px;
+  //padding: $pad-mrg-md-lg;
   justify-content: center;
-  height: auto;
-  padding: $pad-mrg-md-lg;
   line-height: .85em;
   background-color: $lime;
   user-select: none;
@@ -55,7 +213,7 @@ nav > ul li {
 
 main {
   width: 100%;
-  max-width: 980px;
+  max-width: $max-main-w;
   margin: 0 auto;
   padding: 0;
   flex: 1;
@@ -86,13 +244,6 @@ footer .company-name {
   font-size: $fs-xs;
   padding-right: $pad-mrg-sm;
 }
-
-/*
-============================================================
-BUTTONS
-============================================================
-*/
-
 
 /*
 ============================================================
@@ -362,6 +513,8 @@ SLIDESHOW
 */
 
 .slideshow {
+  max-width: 980px;
+  margin: 0 auto;
   position: relative;
   z-index: 0;
 }
@@ -403,8 +556,7 @@ SLIDESHOW PROGRESS BAR
 */
 
 ul.progress-bar {
-  max-width: none;
-  margin: 0 20px;
+  margin: 0 auto;
   display: flex;
   position: relative;
   top: -34px;
@@ -477,6 +629,8 @@ HERO BANNER
 */
 
 .hero {
+  max-width: 980px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -492,6 +646,7 @@ HERO BANNER
 .banner {
   height: 300px;
   width: 100%;
+  background-position: center;
 }
 
 .banner.lg {
@@ -580,7 +735,7 @@ ul.ddm {
   position: absolute;
   z-index: 2;
   margin-left: -100px;
-  margin-top: 52px;
+  margin-top: 42px;
   padding: 0;
   list-style-type: none;
   background-color: $lime;
@@ -624,6 +779,23 @@ footer > nav > ul > li.dd {
   display: none;
 }
 
+
+/*
+============================================================
+PAGES
+============================================================
+*/
+
+.docs-page {
+  h1:not(.main-title),
+  h2 {
+    text-align: left;
+  }
+  p {
+    text-align: left;
+  }
+}
+
 /*
 ============================================================
 MEDIA QUERY - 768px
@@ -641,24 +813,29 @@ MEDIA QUERY - 768px
   header {
     height: auto;
     flex-direction: column;
-    padding-bottom: $pad-mrg-no;
+    padding: 8px 20px;
+    //padding-bottom: $pad-mrg-no;
   }
 
   header > div.h-left {
     display: flex;
     width: 100%;
-    padding-bottom: $pad-mrg-md-lg;
+    padding-bottom: 0;
     align-items: center;
     justify-content: center;
   }
 
+  header.show > div.h-left {
+    padding-bottom: 8px;
+  }
+
   header > div.h-right {
     display: none;
-    width: 100%;
+    width: calc(100% + 40px);
     border-top: 1px solid $black;
   }
 
-  header > div.h-right.show {
+  header.show > div.h-right {
     display: block;
   }
 
@@ -676,8 +853,8 @@ MEDIA QUERY - 768px
   }
 
   header nav {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
   }
 
@@ -695,10 +872,6 @@ MEDIA QUERY - 768px
     padding-right: $pad-mrg-md;
   }
 
-  nav > ul > li.dd {
-    padding: 0;
-  }
-
   /*
   ============================================================
   DROPDOWN MENU
@@ -707,6 +880,7 @@ MEDIA QUERY - 768px
 
   nav > ul > li.dd {
     margin-right: 0px;;
+    padding: 0;
   }
 
   .ddm-btn {
@@ -757,6 +931,7 @@ MEDIA QUERY - 768px
   .hero {
     display: flex;
     flex-direction: column;
+    padding: 0;
   }
 
   .h-top,
@@ -830,6 +1005,94 @@ MEDIA QUERY - 768px
 
   .tbl:last-child .multi-select-input > .menu {
     margin-top: -200px;
+  }
+
+
+  /*
+  ============================================================
+  PANELS
+  ============================================================
+  */
+
+  .panels.col-2 {
+    flex-direction: column;
+  }
+
+  .panels.col-2 > .panel:first-child {
+    width: 100%;
+  }
+
+  /*
+  ============================================================
+  SIDEBAR
+  ============================================================
+  */
+
+  .sidebar:not(.stuck) > .toggle {
+    padding: 25px 25px 10px;
+  }
+
+  .sidebar.stuck.closed {
+    position: fixed;
+    top: 0;
+    background: #FFF;
+    z-index: 4;
+    padding: 0;
+  }
+
+  .panels.col-2 > .panel > .sidebar {
+    border-bottom: 1px solid #E0E0E0;
+    padding-top: 0;
+    z-index: 4;
+  }
+
+  .sidebar > .toggle, .sidebar.stuck  > .toggle {
+    margin-top: 0;
+    width: 100%;
+    background: #FFF;
+    text-align: center;
+  }
+
+  .sidebar.stuck:not(.closed) > .toggle {
+    padding: 20px;
+  }
+
+  .sidebar > nav > ul > li {
+    text-align: center;
+  }
+
+  .sidebar > nav,
+  .sidebar.stuck > nav {
+    width: 100%;
+    background: #FFF;
+    margin-top: -5px;
+  }
+
+  /*
+  ============================================================
+  STICKY HEADER
+  ============================================================
+  */
+
+  .sticky-header > h1,
+  .sticky-header.stuck > h1 {
+    padding: 15px 20px;
+  }
+
+
+  .sticky-header > h1,
+  .sticky-header.stuck > h1,
+  .sticky-header + section,
+  .sticky-header.stuck + section  {
+    top: 98px;
+  }
+
+  .sticky-header + section,
+  .sticky-header.stuck + section  {
+    margin-top: 98px;
+  }
+  .sticky-header.stuck + section  {
+    padding-top: 88px;
   }
 
 }

@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Elements, Forms, Hero, Slideshow } from '@ludwigjs/ui'
 
-class Widgets extends Component {
+class Contact extends Component {
 
   constructor(props) {
 
     super(props)
-    
+
   }
 
   render() {
@@ -39,4 +39,4 @@ class Widgets extends Component {
   }
 }
 
-export default Widgets
+export default Contact

@@ -2,7 +2,10 @@
 
 const Bounce = require('bounce'),
   Mysql = require('mysql'),
-  MysqlPool = Mysql.createPool(process.env.CLEARDB_DATABASE_URL),
+  env = process.env.NODE_ENV || 'development',
+  config = require('../../../data/models').config,
+  connectionString = `mysql://${config.username}:${config.password}@${config.host}/${config.database}`,
+  MysqlPool = Mysql.createPool(connectionString),
   ReadSqlFile = require('../../utilities').ReadFileAsync,
   FormatSql = (sql, values) => {
 

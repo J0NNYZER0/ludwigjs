@@ -12,8 +12,7 @@ const Bounce = require('bounce'),
   QueryHandler = require('../apis/mysql').QueryHandler,
   Email = require('../email').Email,
   Data = {
-    Products: require('../../assets/products.json'),
-    Widgets: require('../../assets/widgets.json')
+    Products: require('../../assets/products.json')
   },
   ssr = require('../../compiled/server'),
   template = require('../../compiled/template')
@@ -22,8 +21,7 @@ let initialState = {
   account: {},
   messages: [],
   products: Data.Products.data,
-  ui: { modal: false },
-  widgets: Data.Widgets.data
+  ui: { modal: false }
 },
 switchAccountStatus = (accountStatus, status) => new Promise(resolve => {
 

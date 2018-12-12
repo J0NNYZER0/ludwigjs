@@ -3,7 +3,7 @@
 // File is located at /assets/img/file
 
 .icon {
-    background: url(../../media/icons-sprite.svg) 1248px 1248px no-repeat;
+    //background: url(../../media/icons-sprite.svg) 1248px 1248px no-repeat;
     background-size: 1248px 1248px;
     width: $icon-size-sm;
     height: $icon-size-sm;
@@ -41,55 +41,51 @@ footer .logo {
 .ludwig {
   background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/ludwig.svg) no-repeat;
   background-size: 250px;
-  background-position: center;
 }
 
 .wooden-ludwig {
   background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/wooden-ludwig.svg) no-repeat;
   background-size: 300px;
-  background-position: center;
 }
 
 .magical-blk-box-ludwig {
   background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/magical-black-box-ludwig.svg) no-repeat;
   background-size: 250px;
-  background-position: center;
 }
 
 .cog {
   background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/cog.svg) no-repeat;
   background-size: 140px;
-  background-position: center;
+}
+
+.code-monkey {
+  background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/code-monkey.svg) no-repeat;
+  background-size: 250px;
 }
 
 .beastie {
   background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/beastie.svg) no-repeat;
   background-size: 310px;
-  background-position: center;
 }
 
 .rock-star {
   background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/rock-star.svg) no-repeat;
   background-size: 310px;
-  background-position: center;
 }
 
 .boy-wonder {
   background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/boy-wonder.svg) no-repeat;
   background-size: 310px;
-  background-position: center;
 }
 
 .slacker {
   background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/slacker.svg) no-repeat;
   background-size: 310px;
-  background-position: center;
 }
 
 .elf {
   background: url(https://s3-us-west-1.amazonaws.com/vellocet/images/banners/elf.svg) no-repeat;
   background-size: 150px;
-  background-position: center;
 }
 
 .bolt-top::before,
