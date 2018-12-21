@@ -1,11 +1,15 @@
 FROM node:11.1
 
-ENV MYSQL_ROOT_PASSWORD ${MYSQL_ROOT_PASSWORD}
-
-ADD . .
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
+COPY package.json /usr/src/app
+COPY . /usr/src/app
+RUN npm rebuild node-sass
 RUN npm install
-RUN ["chmod", "+x", "scripts/init-db.sh"]
+RUN npm run build
 
-CMD ["node", "server/index.js"]
+RUN ["chmod", "+x", "/usr/src/app/scripts/init-db.sh"]
+
+CMD ["node", "usr/src/app/server/index.js"]
 
 EXPOSE 3000

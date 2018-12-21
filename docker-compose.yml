@@ -10,6 +10,8 @@ services:
     depends_on:
     - db
     command: "npm run db:build"
+    volumes:
+    - .:/usr/src/app/
   db:
     image: "mysql:5.7"
     env_file: config/local.env
