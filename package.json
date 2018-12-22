@@ -6,6 +6,9 @@
   "scripts": {
     "heroku-prebuild": "echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon server/index.js",
+    "watch:front": "webpack --watch --mode development --config webpack.dev.config.js",
+    "watch:dev": "npm-run-all -p nodemon watch:front",
     "start": "node server/index.js",
     "start-local": "docker-compose down && docker-compose build && docker-compose up",
     "start-heroku-local": "source ~/envs/ludwig/env && nodemon server/index.js",
@@ -69,6 +72,7 @@
     "mini-css-extract-plugin": "^0.4.5",
     "node-sass": "^4.9.4",
     "nodemon": "^1.18.7",
+    "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "sass-loader": "^7.1.0",
     "sequelize": "^4.41.2",
