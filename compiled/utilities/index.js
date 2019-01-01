@@ -1,1 +1,36 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.Utilities=void 0;function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _defineProperties(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,"value"in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}function _createClass(a,b,c){return b&&_defineProperties(a.prototype,b),c&&_defineProperties(a,c),a}var Utilities=/*#__PURE__*/function(){function a(){_classCallCheck(this,a)}return _createClass(a,null,[{key:"getLocalStorage",value:function b(a){return JSON.parse(localStorage.getItem(a))}},{key:"setLocalStorage",value:function c(a,b){localStorage.setItem(a,JSON.stringify(b))}}]),a}();exports.Utilities=Utilities;
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Utilities = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Utilities =
+/*#__PURE__*/
+function () {
+  function Utilities() {
+    _classCallCheck(this, Utilities);
+  }
+
+  _createClass(Utilities, null, [{
+    key: "getLocalStorage",
+    value: function getLocalStorage(key) {
+      return JSON.parse(localStorage.getItem(key));
+    }
+  }, {
+    key: "setLocalStorage",
+    value: function setLocalStorage(key, data) {
+      localStorage.setItem(key, JSON.stringify(data));
+    }
+  }]);
+
+  return Utilities;
+}();
+
+exports.Utilities = Utilities;

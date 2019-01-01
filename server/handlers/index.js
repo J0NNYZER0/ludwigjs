@@ -219,38 +219,25 @@ const Handlers = {
 
         console.log('ACCOUNT STATUS:', _accountStatus)
 
-        if (_accountStatus.status !== ACCOUNT_STATUS.LOGGED_OUT &&
-            _accountStatus.status !== ACCOUNT_STATUS.LOGGING_IN &&
-            _accountStatus.status !== ACCOUNT_STATUS.SESSION_TIMEOUT) {
+        console.log('EXECUTE ACCOUNT LOGGING IN')
 
-          console.log('DO NOT EXECUTE ACCOUNT LOGGING IN')
+        const sid = ShortId.generate()
 
-          return h.response({ status: 200, data: { status: _accountStatus.status, message: _accountStatus.message } })
+        await Email('Login at Ludwig UI', _accountStatus.account.first_name, `${HOST}login/`, payload.email, sid, 'Login')
 
-        }
+        console.log('token /' + sid)
 
-        else {
+        _accountStatus = await switchAccountStatus(_accountStatus, ACCOUNT_STATUS.LOGGING_IN)
 
-          console.log('EXECUTE ACCOUNT LOGGING IN')
+        request.server.app.cache.rules({ expiresIn: 10 * 60 * 1000 })
 
-          const sid = ShortId.generate()
+        await request.server.app.cache.set(sid, _accountStatus.account, 0)
 
-          await Email('Login at Ludwig UI', _accountStatus.account.first_name, `${HOST}login/`, payload.email, sid, 'Login')
+        request.cookieAuth.set({ sid })
 
-          console.log('token /' + sid)
+        console.log('TOKEN SHORTCUT', `${sid}`)
 
-          _accountStatus = await switchAccountStatus(_accountStatus, ACCOUNT_STATUS.LOGGING_IN)
-
-          request.server.app.cache.rules({ expiresIn: 10 * 60 * 1000 })
-
-          await request.server.app.cache.set(sid, _accountStatus.account, 0)
-
-          request.cookieAuth.set({ sid })
-
-          console.log('TOKEN SHORTCUT', `${sid}`)
-
-          return h.response({ status: 200, data: { status: _accountStatus.status, message: _accountStatus.message } })
-        }
+        return h.response({ status: 200, data: { status: _accountStatus.status, message: _accountStatus.message } })
 
       } catch(e) {
 
@@ -267,6 +254,8 @@ const Handlers = {
 
         const session = request.state.hasOwnProperty('sid')
 
+        console.log('SESSION TO LOGOUT', session)
+
         if (session) {
 
           const cachedAccount = await request.server.app.cache.get(request.state['sid'].sid)
@@ -277,13 +266,13 @@ const Handlers = {
 
           } else {
 
-            await QueryHandler('../apis/mysql/queries/update/account_logout.sql', [cachedAccount.email])
+            await QueryHandler('../apis/mysql/queries/update/account_logout.sql',[cachedAccount.email])
 
             request.server.app.cache.drop(request.state['sid'].sid)
 
             request.cookieAuth.clear()
 
-            return h.response({ status: 200, data: { status: ACCOUNT_STATUS.LOGGED_OUT }, message: STATUS_MESSAGES.LOGGED_OUT })
+            return h.response({ status: 200, data: { status: ACCOUNT_STATUS.LOGGED_OUT, message: STATUS_MESSAGES.LOGGED_OUT } })
 
           }
         }
@@ -322,15 +311,15 @@ const Handlers = {
 
           const sid = ShortId.generate()
 
-          await Email('Login at Ludwig UI', payload.first_name, `${HOST}login/`, payload.email, sid, 'Login')
+          await Email('Login at Ludwig UI', payload.first_name, `${HOST}login/`, payload.email, sid, `Login`)
 
-          let newAccount = { ...payload, is_confirmed: 0, is_in_session: 0 }
+          let newAccount = { ...payload, is_confirmed: 0, is_in_session: 0, is_disabled: 0, scope: `user` }
 
-          await QueryHandler('../apis/mysql/queries/insert/account.sql', newAccount)
+          await QueryHandler(`../apis/mysql/queries/insert/account.sql`, newAccount)
 
           newAccount.status = ACCOUNT_STATUS.UNCONFIRMED
 
-          newAccount.message = 'Please check your email for your one-click login.'
+          newAccount.message = `Please check your email for your one-click login.`
 
           await request.server.app.cache.set(sid, newAccount, 0)
 
