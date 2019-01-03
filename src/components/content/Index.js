@@ -31,3 +31,4 @@ class SidebarContent extends Component {
 }
 
 export default SidebarContent
+

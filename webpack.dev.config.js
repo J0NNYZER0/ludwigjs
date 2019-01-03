@@ -16,7 +16,7 @@ module.exports = {
     historyApiFallback: true,
     proxy: [{
       context: ['/content', '/api'],
-      target: 'http://0.0.0.0:3000',
+      target: 'http://0.0.0.0:3000'
     }]
   },
   entry: {

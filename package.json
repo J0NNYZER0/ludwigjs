@@ -7,7 +7,7 @@
     "heroku-prebuild": "echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "start-local": "docker-compose down && docker-compose build && docker-compose up",
+    "start:docker": "docker-compose down && docker-compose build && docker-compose up",
     "start:local": "source ~/envs/ludwig/env && nodemon server/index.js",
     "webpack-local": "webpack-dev-server --config webpack.dev.config.js",
     "webpack": "webpack --config webpack.prod.config.js",
