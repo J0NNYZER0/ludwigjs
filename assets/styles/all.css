@@ -202,6 +202,9 @@ section:first-child {
   border-radius: 6px;
   color: #000; }
 
+.grid.grid-hero {
+  width: 100%; }
+
 .grid.lyt-100 {
   width: calc(100% - 20px); }
 

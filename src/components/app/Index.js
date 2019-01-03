@@ -20,6 +20,16 @@ class App extends Component {
     this.logout = this.logout.bind(this)
   }
 
+
+  componentDidMount() {
+
+    const { actions } = this.props
+
+    actions.content.getProducts(`products.json`)
+    actions.content.getDocs(`docs.json`)
+
+  }
+
   logout() {
 
     const { actions, cookies } = this.props

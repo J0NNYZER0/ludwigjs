@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Elements, Forms, GridLayouts, Hero, Slideshow } from '@ludwigjs/ui'
+import { Elements, Forms, Grids, Hero, Slideshow } from '@ludwigjs/ui'
 
 class Plan extends Component {
 
@@ -53,7 +53,10 @@ class Plan extends Component {
 
   render() {
     const { plan } = this.state,
-      { hero } = plan
+        { hero } = plan,
+        { match, content } = this.props,
+        { products } = content,
+        otherProducts = products.filter(el => match.params.id != el.id)
 
     return (
       <div>
@@ -95,8 +98,7 @@ class Plan extends Component {
             {`No muss or fuss, Ludwig gives developers a rockin' end to end
             boilerplate. If your app needs more fuel check out our packages.`}
           </p>
-          <GridLayouts.GridLayoutA items={this.props.content.products}
-          callback={this.props.actions.content.getProducts} />
+            <Grids.Layout {...this.props} items={otherProducts} />
         </section>
         <section>
           <h3>Request A Demo</h3>

@@ -16,7 +16,7 @@ class Sidebar extends Component {
 
     this.handleToggle = this.handleToggle.bind(this)
 
-    this.handleSectionClick = this.handleSectionClick.bind(this)
+    //this.handleSectionClick = this.handleSectionClick.bind(this)
 
     this.handleScroll = this.handleScroll.bind(this)
 
@@ -30,12 +30,12 @@ class Sidebar extends Component {
     window.removeEventListener('scroll', this.handleScroll)
   }
 
-  handleSectionClick() {
+  handleSectionClick(i) {
 
     const { show } = this.state
 
-    this.setState({ ...this.state, show: !show }, () => {
-      console.log('headerRef')
+    this.setState({ ...this.state, show: !show, section: i }, () => {
+      console.log('test', this.state.section)
     })
 
   }
@@ -65,7 +65,8 @@ class Sidebar extends Component {
 
   render() {
 
-    const { show, toggle } = this.state,
+    const { show, toggle, section } = this.state,
+        { items } = this.props,
       scrollWithOffset = (el, offset) => {
         const elementPosition = el.offsetTop - offset;
         window.scroll({
@@ -81,62 +82,21 @@ class Sidebar extends Component {
         <div className='toggle' onClick={this.handleToggle}><span>Ludwig v1.0.0</span></div>
         <nav>
           <ul>
-            <li className={show !== false ? 'show' : ''}>
-              <span onClick={this.handleSectionClick}>Getting Started</span>
-              <ul>
-                <li>
-                  <HashLink to='/docs#about' scroll={el => scrollWithOffset(el, offSet)}>About</HashLink>
-                </li>
-                <li>
-                  <HashLink to='/docs#requirements' scroll={el => scrollWithOffset(el, offSet)}>Requirements</HashLink>
-                </li>
-                <li>
-                  Installation
-                </li>
-                <li>
-                  Usage
-                </li>
-                <li>
-                  Options
-                </li>
-              </ul>
-            </li>
-            <li>
-              <span>Workflow</span>
-            </li>
-            <li>
-              <span>Pages</span>
-            </li>
-            <li>
-              <span>Components</span>
-            </li>
-            <li>
-              <span>Layouts</span>
-            </li>
-            <li>
-              <span>Resources</span>
-            </li>
-            <li>
-              <span>Themes</span>
-            </li>
-            <li>
-              <span>Plugins</span>
-            </li>
-            <li>
-              <span>Webpack</span>
-            </li>
-            <li>
-              <span>Deployment</span>
-            </li>
-            <li>
-              <span>License</span>
-            </li>
-            <li>
-              <span>Updates</span>
-            </li>
-            <li>
-              <span>Support</span>
-            </li>
+            {items.map((sec,i) => {
+              return <li key={i} className={section === i ? 'show' : ''}>
+                <span onClick={this.handleSectionClick.bind(this,i)}>{sec.title}</span>
+                <ul>
+                  {sec.categories.map((cat,ii) => {
+
+                    const anchor = sec.title + ` ` + cat.title
+
+                    return <li key={ii}>
+                      <HashLink to={`/docs#${anchor.replace(/\s/g, `_`).toLowerCase()}`} scroll={el => scrollWithOffset(el, offSet)}>{cat.title}</HashLink>
+                    </li>
+                  })}
+                </ul>
+              </li>
+            })}
           </ul>
         </nav>
         <HashLink to='/docs#top' className='gototop' smooth><span>Go To Top</span></HashLink>
