@@ -8,17 +8,17 @@ const contentReducer = (state = initialState.content, action) => {
 
     case constants.ACTIONS.CONTENT.DOCS.LOAD: {
 
-      const docs = [...action.data]
+      const newContent = {...state, docs: action.data}
 
-      return { ...initialState.content, docs: docs }
+      return newContent
 
     }
 
     case constants.ACTIONS.CONTENT.PRODUCTS.LOAD: {
 
-      const products = [...action.data]
+      const newContent = {...state, products: action.data}
 
-      return { ...initialState.content, products: products }
+      return newContent
 
     }
 

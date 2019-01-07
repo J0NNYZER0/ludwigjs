@@ -15,7 +15,7 @@ module.exports = {
     publicPath: '/',
     historyApiFallback: true,
     proxy: [{
-      context: ['/content', '/api'],
+      context: ['/content', '/api', '/assets'],
       target: 'http://0.0.0.0:3000'
     }]
   },

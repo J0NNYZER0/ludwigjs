@@ -60,7 +60,7 @@ class Home extends Component {
               momma all have different levels when it comes to using Ludwig,
               we wanna help out.`}
           </p>
-
+            <Grids.Layout {...this.props} items={products} />
         </section>
         <section className='gry-brdr bolt-top'>
           <h3>{`Caution: Noobs Beware*`}</h3>

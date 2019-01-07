@@ -235,6 +235,20 @@ const Static = [
       handler: Handlers.Static.Accounts
     }
   },
+  // /assets/{asset*}
+  {
+    method: 'GET',
+    path: '/assets/{asset*}',
+    options: {
+      auth: false,
+      handler: {
+        directory: {
+          path: Path.join(__dirname, '../../assets'),
+          listing: false
+        }
+      }
+    }
+  },
   // /content/{content*}
   {
     method: 'GET',

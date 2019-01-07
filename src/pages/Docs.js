@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Elements, Hero } from '@ludwigjs/ui'
-import Sidebar from '../components/sidebars/Index'
-import SidebarContent from '../components/content/Index'
+import { Elements, Hero, Sticky } from '@ludwigjs/ui'
 
 class Docs extends Component {
 
@@ -20,7 +18,7 @@ class Docs extends Component {
       <div className='docs-page'>
         <div className='panels col-2'>
           <div className='panel'>
-            <Sidebar items={docs} />
+            <Sticky.Sidebar items={docs} path={'/docs'} />
           </div>
           <div className='panel'>
             <section className='t-mrg bolt-btm bolt-top'>
@@ -33,7 +31,7 @@ class Docs extends Component {
                 <div className='banner code-monkey' />
               </Hero>
             </section>
-            {docs.map((el,i) => <SidebarContent key={i} item={el}/>)}
+            {docs.map((el,i) => <Sticky.Content key={i} item={el}/>)}
           </div>
         </div>
       </div>

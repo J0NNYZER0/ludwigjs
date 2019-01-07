@@ -25,8 +25,8 @@ class App extends Component {
 
     const { actions } = this.props
 
-    actions.content.getProducts(`products.json`)
     actions.content.getDocs(`docs.json`)
+    actions.content.getProducts(`products.json`)
 
   }
 
