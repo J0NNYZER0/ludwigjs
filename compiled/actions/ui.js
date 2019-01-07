@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.modal=void 0;var _contact=require("../apis/contact"),_index=require("../constants/index"),toggle=function(a){return{type:_index.Constants.UI.MODAL,data:a}},modal=function(a){return function(b){return new Promise(function(){b(toggle(a))})}};exports.modal=modal;
