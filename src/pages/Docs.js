@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Elements, Hero } from '@ludwigjs/ui'
-import Sidebar from '../components/sidebars/Index'
-import StickyHeader from '../components/elements/StickyHeader'
+import { Elements, Hero, Sticky } from '@ludwigjs/ui'
 
 class Docs extends Component {
 
@@ -13,11 +11,14 @@ class Docs extends Component {
 
   render() {
 
+    const { content } = this.props,
+        { docs } = content
+
     return (
       <div className='docs-page'>
         <div className='panels col-2'>
           <div className='panel'>
-            <Sidebar />
+            <Sticky.Sidebar items={docs} path={'/docs'} />
           </div>
           <div className='panel'>
             <section className='t-mrg bolt-btm bolt-top'>
@@ -30,138 +31,7 @@ class Docs extends Component {
                 <div className='banner code-monkey' />
               </Hero>
             </section>
-            <StickyHeader title={`Getting Started`} />
-            <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
-            <StickyHeader title={`Workflow`} />
-            <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
-            <StickyHeader title={`Pages`} />
-            <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
-            <StickyHeader title={`Components`} />
-            <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
-            <StickyHeader title={`Layouts`} />
-            <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
-            <StickyHeader title={`Resources`} />
-            <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
-            <StickyHeader title={`Themes`} />
-            <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
-            <StickyHeader title={`Plugins`} />
-            <section>
-              <h2 id='about'>{`About`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
-            <StickyHeader title={`Deployment`} />
-            <section>
-              <h2 id="requirements">{`Requirements`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
-            <StickyHeader title={`License`} />
-            <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
-            <StickyHeader title={`Updates`} />
-            <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
-            <StickyHeader title={`Support`} />
-            <section>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-              <h2>{`Some Helpful Subcategory`}</h2>
-              <p>
-                {`Some helpful text.`}
-              </p>
-            </section>
+            {docs.map((el,i) => <Sticky.Content key={i} item={el}/>)}
           </div>
         </div>
       </div>
@@ -170,3 +40,4 @@ class Docs extends Component {
 }
 
 export default Docs
+

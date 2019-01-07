@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _StickyHeader = _interopRequireDefault(require("../../elements/StickyHeader"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -19,68 +23,47 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-var StickyHeader =
+var SidebarContent =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(StickyHeader, _Component);
+  _inherits(SidebarContent, _Component);
 
-  function StickyHeader(props) {
-    var _this;
+  function SidebarContent(props) {
+    _classCallCheck(this, SidebarContent);
 
-    _classCallCheck(this, StickyHeader);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(StickyHeader).call(this, props));
-    _this.headerRef = _react.default.createRef();
-    _this.handleScroll = _this.handleScroll.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(SidebarContent).call(this, props));
   }
 
-  _createClass(StickyHeader, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      window.addEventListener('scroll', this.handleScroll);
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      window.removeEventListener('scroll', this.handleScroll);
-    }
-  }, {
-    key: "handleScroll",
-    value: function handleScroll() {
-      var header = this.headerRef.current,
-          stickyHeader = header.parentNode,
-          stickeyHeaderOffset = stickyHeader.offsetTop;
-
-      if (window.pageYOffset > stickeyHeaderOffset) {
-        stickyHeader.classList.add('stuck');
-      } else {
-        stickyHeader.classList.remove('stuck');
-      }
-    }
-  }, {
+  _createClass(SidebarContent, [{
     key: "render",
     value: function render() {
-      var _this$props$title = this.props.title,
-          title = _this$props$title === void 0 ? '' : _this$props$title;
+      var item = this.props.item;
       return _react.default.createElement("div", {
-        className: "sticky-header"
-      }, _react.default.createElement("h1", {
-        ref: this.headerRef
-      }, "".concat(title)));
+        key: item.title
+      }, _react.default.createElement(_StickyHeader.default, {
+        title: item.title
+      }), _react.default.createElement("section", null, item.categories.map(function (cat, i) {
+        var anchor = item.title + " " + cat.title;
+        return [_react.default.createElement("h2", {
+          key: "".concat(i, "_title"),
+          id: "".concat(anchor.replace(/\s/g, "_").toLowerCase())
+        }, cat.title), _react.default.createElement("p", {
+          key: "".concat(i, "_content")
+        }, cat.content)];
+      })));
     }
   }]);
 
-  return StickyHeader;
+  return SidebarContent;
 }(_react.Component);
 
-var _default = StickyHeader;
+var _default = SidebarContent;
 exports.default = _default;

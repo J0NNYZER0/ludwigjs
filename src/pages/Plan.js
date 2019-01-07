@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Elements, Forms, GridLayouts, Hero, Slideshow } from '@ludwigjs/ui'
+import { Elements, Forms, Grids, Hero, Slideshow } from '@ludwigjs/ui'
 
 class Plan extends Component {
 
@@ -13,10 +13,11 @@ class Plan extends Component {
 
   componentDidMount() {
 
-    const { match, products } = this.props,
+    const { match, content } = this.props,
+      { products } = content,
       productId = match.params.id
 
-    products.find(plan => {
+    products.length > 0 && products.find(plan => {
 
       if (plan.id === parseInt(productId)) {
 
@@ -30,12 +31,13 @@ class Plan extends Component {
 
   componentDidUpdate(prevProps, prevState) {
 
-    const { match, products } = this.props,
+    const { match, content } = this.props,
+      { products } = content,
       productId = match.params.id
 
     if (prevProps.match.params.id !== productId) {
 
-      products.find(plan => {
+      products.length > 0 && products.find(plan => {
 
         if (plan.id === parseInt(productId)) {
 
@@ -51,7 +53,10 @@ class Plan extends Component {
 
   render() {
     const { plan } = this.state,
-      { hero } = plan
+        { hero } = plan,
+        { match, content } = this.props,
+        { products } = content,
+        otherProducts = products.filter(el => match.params.id != el.id)
 
     return (
       <div>
@@ -93,7 +98,7 @@ class Plan extends Component {
             {`No muss or fuss, Ludwig gives developers a rockin' end to end
             boilerplate. If your app needs more fuel check out our packages.`}
           </p>
-          <GridLayouts.GridLayoutA {...this.props} />
+            <Grids.Layout {...this.props} items={otherProducts} />
         </section>
         <section>
           <h3>Request A Demo</h3>

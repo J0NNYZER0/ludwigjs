@@ -11,16 +11,20 @@ const Bounce = require('bounce'),
   accountStatus = require('../plugins/account-mgr'),
   QueryHandler = require('../apis/mysql').QueryHandler,
   Email = require('../email').Email,
-  Data = {
-    Products: require('../../assets/products.json')
+  Content = {
+    Docs: require('../../content/docs.json'),
+    Products: require('../../content/products.json')
   },
   ssr = require('../../compiled/server'),
   template = require('../../compiled/template')
 
 let initialState = {
   account: {},
+  content: {
+    docs: Content.Docs.data,
+    products: Content.Products.data
+  },
   messages: [],
-  products: Data.Products.data,
   ui: { modal: false }
 },
 switchAccountStatus = (accountStatus, status) => new Promise(resolve => {
@@ -538,22 +542,6 @@ const Handlers = {
         const { preloadedState, content}  = ssr(request.url.path, initialState)
 
         let response = template("Register", preloadedState, content)
-
-        return h.response(response)
-
-      } catch(e) {
-
-        Bounce.rethrow(e, 'system')
-
-      }
-    },
-    Widgets: async (request,h) => {
-      try {
-
-        const _initialState = {...initialState, account: request.pre.account},
-          { content, preloadedState }  = ssr(request.url.path, _initialState)
-
-        let response = template("Widgets", preloadedState, content)
 
         return h.response(response)
 

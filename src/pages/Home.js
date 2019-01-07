@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { Forms, GridLayouts, Heros } from '@ludwigjs/ui'
+import { Forms, Grids, Heros } from '@ludwigjs/ui'
 
 class Home extends Component {
 
-  render() {
+    render() {
 
-    const { actions } = this.props
+    const { actions, content } = this.props,
+        { products } = content
 
     return (
       <div>
@@ -59,7 +60,7 @@ class Home extends Component {
               momma all have different levels when it comes to using Ludwig,
               we wanna help out.`}
           </p>
-          <GridLayouts.GridLayoutA {...this.props} />
+            <Grids.Layout {...this.props} items={products} />
         </section>
         <section className='gry-brdr bolt-top'>
           <h3>{`Caution: Noobs Beware*`}</h3>
