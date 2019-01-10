@@ -14,9 +14,10 @@ module.exports = {
     //match the output publicPath
     publicPath: '/',
     historyApiFallback: true,
-    proxy: {
-      '*': 'http://0.0.0.0:3000'
-    }
+    proxy: [{
+      context: ['/content', '/api', '/assets'],
+      target: 'http://0.0.0.0:3000'
+    }]
   },
   entry: {
     server: ['./src/bundles/server.js'],

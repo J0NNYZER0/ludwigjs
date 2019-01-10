@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Account from '../pages/Account'
 import Accounts from '../pages/Accounts'
 import Contact from '../pages/Contact'
+import Docs from '../pages/Docs'
 import Home from '../pages/Home'
 import Login from '../pages/Login'
 import NotFound from '../pages/NotFound'
@@ -27,6 +28,8 @@ class Main extends Component {
          render={props => (<Product  {...this.props} {...props} />)} />
        <Route key='/plan/:id?' path='/plan/:id?' exact
          render={props => (<Plan  {...this.props} {...props} />)} />
+       <Route key='/docs' path='/docs' exact
+         render={props => (<Docs  {...this.props} {...props} />)} />
        <Route key='/contact' path='/contact'
          render={props => (<Contact {...this.props} {...props} />)} />
        <Route key='/register' path='/register'

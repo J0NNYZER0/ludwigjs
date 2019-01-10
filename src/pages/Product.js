@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import { Accordion, Elements, Forms, GridLayouts, Hero, Slideshow } from '@ludwigjs/ui'
+import { Accordion, Elements, Forms, Grids, Hero, Slideshow } from '@ludwigjs/ui'
 import Preso1 from '../components/presos/Preso-1'
 
 class Plan extends Component {
 
   render() {
+
+    const { content } = this.props,
+        { products } = content
 
     return (
       <div>
@@ -418,7 +421,7 @@ class Plan extends Component {
             {`No muss or fuss, Ludwig gives developers a rockin' end to end
             boilerplate. If your app needs more fuel check out our packages.`}
           </p>
-          <GridLayouts.GridLayoutA {...this.props} />
+          <Grids.Layout {...this.props} items={products} hasHero={true} />
         </section>
         <section className='gry-brdr bolt-top'>
           <h3>{`WYSIWYG`}</h3>

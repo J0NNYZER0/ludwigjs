@@ -2,9 +2,11 @@ export default {
   account: {},
   accounts: [],
   messages: [],
-  products: [],
+  content: {
+    docs: [],
+    products: []
+  },
   ui: {
     modal: false
-  },
-  widgets: []
+  }
 }

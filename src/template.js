@@ -4,11 +4,10 @@ const serialize = require('serialize-javascript')
 function template(title, initialState = {}, content = "") {
   let scripts = ''
   if(content){
-    scripts = ` <script>window.__STATE__ = ${serialize(initialState)}</script>
-                <script src="/assets/server.js"></script>
-                `
+    scripts = `<script>window.__STATE__ = ${serialize(initialState)}</script>
+                <script src="/assets/server.js"></script>`
   } else {
-    scripts = ` <script src="/assets/client.js"> </script> `
+    scripts = `<script src="/assets/client.js"> </script>`
   }
   return `<!DOCTYPE html>
       <html>
